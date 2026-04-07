@@ -1,0 +1,2291 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ulam Ideas PH – Walang maisip na ulam? We got you!</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=KqiNN3vGvdEKTRGTw5N3nWE5jx3O_kE7emLMZWX4z6CC5fhQU1xLeUJa4rh8pt82u0ogl_EMde0si5qFh0CdMKt5AbUoBDCBKqCL5VkvNfUD8GeUPYQgQA9geGNiTankzeDhN6PM0yAJBRR40V2L9Y23CiqgbG04Ml-5_9MYFpv1IGduPhySstijgjn5xlSdjvYtcl1pu3R9geJl55uJVyVl1dNMM167G4lufJ_ZBWDAgjUUY0e4k70iuuWScDhd3qquNsRzMl3Qk2Il9PjEz-PQlXflUWl29qDluRlDOaJW6AljM3upEbwPyQX_-UU_S2o2LHfBz1dB-6IHTxV_6FXN089KDfCFD2-wYe4VfBdk29KikjlittcAhdl3yt4sKQeLBAixW2Ut_g2ES7JRbC1YvqBo0eTIqcMmT6AbhKXLMf3X-ONp9wvFLB_7lssFhjqVPo43nsS0AKvFQEpnz0JlhSkNvl2lwOJsDO24FsQprJs0LfT0CRWGCH9S9xOCpzSlIXFN6sdPX2JRJgVyjSug2QlxxdCYZNK6sR35Sb5O4xmJoq-19WR_DsUpH_WL" charset="UTF-8"></script><style>
+/* ============================================================
+   ROOT & RESET
+============================================================ */
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --orange:#F97316;--orange-dark:#EA580C;--orange-light:#FFF7ED;--orange-pale:#FFEDD5;
+  --green:#16A34A;--green-light:#F0FDF4;--green-pale:#DCFCE7;
+  --red:#DC2626;--yellow:#EAB308;--blue:#2563EB;
+  --cream:#FFFBF5;--warm-gray:#F9F5F0;--border:#E8E0D5;
+  --text:#1C1917;--text-2:#57534E;--text-3:#A8A29E;
+  --white:#FFFFFF;--shadow-sm:0 1px 3px rgba(0,0,0,.08);
+  --shadow:0 4px 16px rgba(0,0,0,.1);--shadow-lg:0 12px 40px rgba(0,0,0,.14);
+  --r:14px;--r-sm:8px;--r-lg:20px;--r-xl:28px;
+  --font-d:'Lora',serif;--font-b:'Nunito',sans-serif;
+  --nav-h:62px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{background:var(--cream);color:var(--text);font-family:var(--font-b);overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom)}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:var(--font-b)}
+input,textarea,select{font-family:var(--font-b)}
+a{text-decoration:none;color:inherit}
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--warm-gray)}
+::-webkit-scrollbar-thumb{background:var(--orange);border-radius:4px}
+
+/* ============================================================
+   UTILITY
+============================================================ */
+.hidden{display:none!important}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.badge-green{background:var(--green-pale);color:#15803D}
+.badge-orange{background:var(--orange-pale);color:var(--orange-dark)}
+.badge-blue{background:#DBEAFE;color:#1D4ED8}
+.badge-red{background:#FEE2E2;color:var(--red)}
+.badge-yellow{background:#FEF9C3;color:#854D0E}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 20px;border-radius:50px;font-weight:700;font-size:.9rem;border:none;transition:all .2s;white-space:nowrap}
+.btn-primary{background:var(--orange);color:#fff}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-1px);box-shadow:0 4px 14px rgba(249,115,22,.4)}
+.btn-secondary{background:var(--white);color:var(--orange);border:2px solid var(--orange)}
+.btn-secondary:hover{background:var(--orange-pale)}
+.btn-ghost{background:transparent;color:var(--text-2);border:1.5px solid var(--border)}
+.btn-ghost:hover{border-color:var(--orange);color:var(--orange)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:#15803D;transform:translateY(-1px)}
+.btn-sm{padding:7px 14px;font-size:.8rem}
+.btn-lg{padding:14px 28px;font-size:1rem}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:50px;background:var(--white);border:1.5px solid var(--border);font-size:.82rem;font-weight:700;color:var(--text-2);transition:all .2s;cursor:pointer;white-space:nowrap}
+.chip:hover,.chip.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
+.section-title{font-family:var(--font-d);font-size:1.35rem;font-weight:600;color:var(--text);line-height:1.25}
+.see-all{font-size:.82rem;font-weight:700;color:var(--orange);display:flex;align-items:center;gap:3px}
+.tag{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:6px}
+
+/* ============================================================
+   VIEWS (SPA routing)
+============================================================ */
+.view{display:none}
+.view.active{display:block}
+
+/* ============================================================
+   TOP NAV
+============================================================ */
+#topnav{position:sticky;top:0;z-index:300;background:rgba(255,251,245,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:var(--nav-h)}
+.nav-inner{max-width:480px;margin:0 auto;padding:0 16px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:8px}
+.nav-logo-icon{width:34px;height:34px;background:var(--orange);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.nav-logo-text{font-family:var(--font-d);font-size:1rem;font-weight:600;line-height:1.1}
+.nav-logo-text span{color:var(--orange);font-style:italic}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.nav-icon-btn{width:38px;height:38px;border-radius:50%;border:none;background:var(--warm-gray);display:flex;align-items:center;justify-content:center;font-size:1.1rem;position:relative;transition:background .2s}
+.nav-icon-btn:hover{background:var(--orange-pale)}
+.nav-badge{position:absolute;top:-2px;right:-2px;background:var(--red);color:#fff;font-size:.55rem;font-weight:800;min-width:16px;height:16px;border-radius:50px;display:flex;align-items:center;justify-content:center;padding:0 3px;border:2px solid var(--cream)}
+
+/* ============================================================
+   BOTTOM NAV
+============================================================ */
+#bottomnav{position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--white);border-top:1px solid var(--border);padding:8px 0 max(8px,env(safe-area-inset-bottom));box-shadow:0 -4px 20px rgba(0,0,0,.07)}
+.bnav-inner{max-width:480px;margin:0 auto;display:flex;justify-content:space-around}
+.bnav-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 8px;border:none;background:transparent;font-family:var(--font-b);font-size:.65rem;font-weight:700;color:var(--text-3);transition:color .2s;cursor:pointer}
+.bnav-item.active{color:var(--orange)}
+.bnav-icon{font-size:1.3rem;line-height:1}
+.bnav-dot{width:4px;height:4px;border-radius:50%;background:var(--orange);margin-top:1px;opacity:0;transition:opacity .2s}
+.bnav-item.active .bnav-dot{opacity:1}
+
+/* ============================================================
+   MAIN CONTENT WRAPPER
+============================================================ */
+.main-content{max-width:480px;margin:0 auto;padding:16px 16px 90px}
+
+/* ============================================================
+   HERO SECTION
+============================================================ */
+.hero{background:linear-gradient(135deg,var(--orange) 0%,#FB923C 50%,#FDBA74 100%);border-radius:var(--r-xl);padding:24px 20px;margin-bottom:20px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30px;right:-30px;width:160px;height:160px;background:rgba(255,255,255,.12);border-radius:50%}
+.hero::after{content:'';position:absolute;bottom:-50px;left:-20px;width:120px;height:120px;background:rgba(255,255,255,.08);border-radius:50%}
+.hero-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.hero-greeting{font-size:.82rem;font-weight:700;color:rgba(255,255,255,.85);letter-spacing:.05em;text-transform:uppercase}
+.hero-date{font-size:.75rem;color:rgba(255,255,255,.7);font-weight:600}
+.hero-headline{font-family:var(--font-d);font-size:1.55rem;font-weight:600;color:#fff;line-height:1.25;margin-bottom:6px}
+.hero-sub{font-size:.85rem;color:rgba(255,255,255,.85);margin-bottom:18px;font-weight:600}
+.hero-search{display:flex;background:rgba(255,255,255,.95);border-radius:50px;padding:5px 5px 5px 16px;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.hero-search input{flex:1;border:none;background:transparent;outline:none;font-family:var(--font-b);font-size:.9rem;color:var(--text);min-width:0}
+.hero-search input::placeholder{color:var(--text-3)}
+.hero-search button{background:var(--orange);color:#fff;border:none;border-radius:50px;padding:8px 16px;font-family:var(--font-b);font-weight:700;font-size:.82rem;flex-shrink:0;transition:background .2s}
+.hero-search button:hover{background:var(--orange-dark)}
+
+/* ============================================================
+   QUICK FILTERS
+============================================================ */
+.filters-scroll{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:20px;scrollbar-width:none}
+.filters-scroll::-webkit-scrollbar{display:none}
+
+/* ============================================================
+   TODAY'S SUGGESTION CARD
+============================================================ */
+.today-card{background:var(--white);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow);margin-bottom:20px;border:1px solid var(--border)}
+.today-img{height:160px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.today-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.45) 0%,transparent 55%)}
+.today-emoji-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,.15))}
+.today-tag{position:absolute;top:12px;left:12px}
+.today-badges{position:absolute;bottom:12px;left:12px;display:flex;gap:6px;flex-wrap:wrap}
+.today-body{padding:14px 16px}
+.today-name{font-family:var(--font-d);font-size:1.2rem;font-weight:600;margin-bottom:4px}
+.today-meta{display:flex;gap:14px;margin-bottom:12px}
+.today-meta-item{display:flex;align-items:center;gap:4px;font-size:.78rem;font-weight:700;color:var(--text-2)}
+.today-actions{display:flex;gap:8px}
+
+/* ============================================================
+   HORIZONTAL SCROLL CARDS
+============================================================ */
+.hscroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;margin:0 -16px;padding-left:16px;padding-right:16px}
+.hscroll::-webkit-scrollbar{display:none}
+
+/* RECIPE CARD (small) */
+.rcard-sm{background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border);min-width:150px;max-width:150px;cursor:pointer;transition:transform .2s,box-shadow .2s;flex-shrink:0}
+.rcard-sm:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.rcard-sm-img{height:90px;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;font-size:2.8rem}
+.rcard-sm-body{padding:9px 10px}
+.rcard-sm-name{font-size:.82rem;font-weight:800;line-height:1.2;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.rcard-sm-meta{display:flex;align-items:center;justify-content:space-between;font-size:.72rem;font-weight:700;color:var(--text-2)}
+.rcard-sm-price{color:var(--green);font-weight:800}
+
+/* RECIPE CARD (list) */
+.rcard-list{display:flex;gap:12px;background:var(--white);border-radius:var(--r);padding:12px;border:1px solid var(--border);box-shadow:var(--shadow-sm);cursor:pointer;transition:box-shadow .2s,transform .2s;margin-bottom:10px}
+.rcard-list:hover{box-shadow:var(--shadow);transform:translateX(2px)}
+.rcard-list-img{width:72px;height:72px;border-radius:10px;overflow:hidden;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2.2rem}
+.rcard-list-body{flex:1;min-width:0}
+.rcard-list-name{font-size:.9rem;font-weight:800;line-height:1.2;margin-bottom:4px}
+.rcard-list-meta{display:flex;gap:10px;font-size:.74rem;font-weight:700;color:var(--text-2);margin-bottom:6px}
+.rcard-list-tags{display:flex;gap:5px;flex-wrap:wrap}
+.rcard-list-save{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--warm-gray);border:none;display:flex;align-items:center;justify-content:center;font-size:1rem;align-self:center;transition:background .2s}
+.rcard-list-save:hover,.rcard-list-save.saved{background:var(--orange-pale);color:var(--orange)}
+
+/* ============================================================
+   CATEGORY GRID
+============================================================ */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.cat-item{background:var(--white);border-radius:var(--r);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-sm);cursor:pointer;transition:transform .2s,box-shadow .2s;text-align:center}
+.cat-item:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.cat-item.active{border-color:var(--orange);box-shadow:0 0 0 2px rgba(249,115,22,.2)}
+.cat-img{height:60px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.cat-label{padding:6px 4px;font-size:.7rem;font-weight:800;color:var(--text);line-height:1.2}
+
+/* ============================================================
+   TRENDING SECTION
+============================================================ */
+.trending-item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)}
+.trending-item:last-child{border:none}
+.trending-num{font-family:var(--font-d);font-size:1.4rem;font-weight:600;color:var(--border);min-width:28px;line-height:1}
+.trending-num.top{color:var(--orange)}
+.trending-img{width:54px;height:54px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.trending-info{flex:1}
+.trending-name{font-size:.88rem;font-weight:800;margin-bottom:2px}
+.trending-sub{font-size:.74rem;color:var(--text-2);font-weight:600}
+.trending-fire{font-size:.9rem}
+
+/* ============================================================
+   TIPID TIPS
+============================================================ */
+.tip-card{background:linear-gradient(135deg,var(--green-light),#ECFDF5);border:1px solid var(--green-pale);border-radius:var(--r-lg);padding:14px 16px;margin-bottom:10px}
+.tip-header{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.tip-icon{font-size:1.2rem}
+.tip-title{font-size:.88rem;font-weight:800;color:var(--green)}
+.tip-text{font-size:.82rem;color:#166534;line-height:1.5;font-weight:600}
+
+/* ============================================================
+   WEEKLY PLANNER
+============================================================ */
+.planner-day{background:var(--white);border-radius:var(--r);border:1px solid var(--border);margin-bottom:10px;overflow:hidden}
+.planner-day-header{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;cursor:pointer;transition:background .2s}
+.planner-day-header:hover{background:var(--warm-gray)}
+.planner-day-name{font-weight:800;font-size:.9rem;display:flex;align-items:center;gap:6px}
+.planner-day-name .day-emoji{font-size:1rem}
+.planner-day-status{font-size:.75rem;font-weight:700;color:var(--text-3)}
+.planner-day-body{display:none;border-top:1px solid var(--border);padding:12px 14px}
+.planner-day.open .planner-day-body{display:block}
+.planner-meal-slot{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px dashed var(--border)}
+.planner-meal-slot:last-child{border:none}
+.planner-meal-label{font-size:.78rem;font-weight:800;color:var(--text-3);min-width:60px;text-transform:uppercase;letter-spacing:.04em}
+.planner-meal-value{flex:1;font-size:.85rem;font-weight:700;color:var(--text);padding:0 8px}
+.planner-meal-value.empty{color:var(--text-3);font-style:italic}
+.planner-add-btn{width:28px;height:28px;border-radius:50%;border:1.5px dashed var(--border);background:transparent;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--text-3);transition:all .2s;flex-shrink:0}
+.planner-add-btn:hover{border-color:var(--orange);color:var(--orange);background:var(--orange-pale)}
+.grocery-section{background:var(--orange-light);border-radius:var(--r-lg);padding:16px;margin-top:16px;border:1px solid rgba(249,115,22,.15)}
+.grocery-title{font-size:1rem;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.grocery-item{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px dashed rgba(249,115,22,.2);font-size:.85rem;font-weight:700}
+.grocery-item:last-child{border:none}
+.grocery-check{width:18px;height:18px;border-radius:5px;border:2px solid var(--orange);flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.grocery-check.checked{background:var(--orange);border-color:var(--orange)}
+.grocery-check.checked::after{content:'✓';color:#fff;font-size:.7rem;font-weight:800}
+
+/* ============================================================
+   RECIPE DETAIL VIEW
+============================================================ */
+.recipe-detail-hero{position:relative;height:200px;overflow:hidden;border-radius:0 0 24px 24px;display:flex;align-items:center;justify-content:center}
+.recipe-detail-hero-emoji{font-size:6rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,.2));position:relative;z-index:1}
+.recipe-detail-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,transparent 55%)}
+.recipe-back-btn{position:absolute;top:16px;left:16px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);border:none;font-size:1.1rem;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);transition:background .2s}
+.recipe-back-btn:hover{background:#fff}
+.recipe-detail-actions{position:absolute;top:16px;right:16px;display:flex;gap:8px}
+.recipe-action-btn{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);border:none;font-size:1.1rem;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);transition:all .2s}
+.recipe-action-btn:hover{background:#fff;transform:scale(1.05)}
+.recipe-action-btn.saved{background:var(--orange);color:#fff}
+.recipe-detail-title{position:absolute;bottom:16px;left:16px;right:16px}
+.recipe-detail-title h1{font-family:var(--font-d);font-size:1.6rem;font-weight:600;color:#fff;line-height:1.2;margin-bottom:6px}
+.recipe-detail-body{padding:16px}
+.recipe-stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+.recipe-stat{background:var(--white);border-radius:var(--r);padding:12px;text-align:center;border:1px solid var(--border)}
+.recipe-stat-val{font-family:var(--font-d);font-size:1.2rem;font-weight:600;color:var(--orange)}
+.recipe-stat-label{font-size:.7rem;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+.recipe-section-title{font-size:1rem;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.ing-list{list-style:none;margin-bottom:20px}
+.ing-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:.88rem}
+.ing-item:last-child{border:none}
+.ing-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0}
+.ing-amount{font-weight:800;color:var(--orange);min-width:70px}
+.step-item{display:flex;gap:12px;margin-bottom:14px}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;font-size:.82rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-text{font-size:.88rem;line-height:1.6;font-weight:600;color:var(--text)}
+.nutrition-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.add-to-plan-bar{background:var(--white);border-top:1px solid var(--border);padding:12px 16px;position:sticky;bottom:0;display:flex;gap:10px;margin:0 -16px}
+
+/* ============================================================
+   FAVORITES VIEW
+============================================================ */
+.empty-state{text-align:center;padding:48px 24px}
+.empty-state-icon{font-size:3rem;margin-bottom:12px}
+.empty-state-title{font-size:1.1rem;font-weight:800;margin-bottom:6px}
+.empty-state-sub{font-size:.85rem;color:var(--text-2);font-weight:600;line-height:1.5}
+
+/* ============================================================
+   RANDOM GENERATOR
+============================================================ */
+.random-card{background:linear-gradient(135deg,#FF6B35,#F7931E);border-radius:var(--r-xl);padding:20px;margin-bottom:20px;text-align:center;position:relative;overflow:hidden}
+.random-card::before{content:'🎲';position:absolute;font-size:6rem;opacity:.1;right:-10px;top:-10px}
+.random-card h2{font-family:var(--font-d);font-size:1.4rem;font-weight:600;color:#fff;margin-bottom:6px}
+.random-card p{color:rgba(255,255,255,.85);font-size:.85rem;font-weight:600;margin-bottom:16px}
+.random-result{background:rgba(255,255,255,.95);border-radius:var(--r-lg);padding:16px;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.random-result-img{width:70px;height:70px;border-radius:10px;overflow:hidden;flex-shrink:0}
+.random-result-img img{width:100%;height:100%;object-fit:cover}
+.random-result-info h3{font-size:1rem;font-weight:800;margin-bottom:4px}
+.random-result-info p{font-size:.78rem;color:var(--text-2);font-weight:600}
+.spin-btn{background:#fff;color:var(--orange);border:none;border-radius:50px;padding:12px 28px;font-family:var(--font-b);font-weight:800;font-size:.95rem;display:flex;align-items:center;gap:8px;margin:0 auto;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.spin-btn:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.spin-btn.spinning .spin-icon{animation:spin .5s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ============================================================
+   SUBMIT RECIPE VIEW
+============================================================ */
+.submit-form{background:var(--white);border-radius:var(--r-lg);padding:20px;border:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-size:.8rem;font-weight:800;color:var(--text);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em}
+.form-input{width:100%;padding:10px 14px;border-radius:var(--r-sm);border:1.5px solid var(--border);font-family:var(--font-b);font-size:.9rem;color:var(--text);background:var(--cream);outline:none;transition:border-color .2s}
+.form-input:focus{border-color:var(--orange);background:#fff}
+textarea.form-input{resize:vertical;min-height:90px}
+.upload-area{border:2px dashed var(--border);border-radius:var(--r);padding:24px;text-align:center;cursor:pointer;transition:all .2s}
+.upload-area:hover{border-color:var(--orange);background:var(--orange-pale)}
+.upload-icon{font-size:2rem;margin-bottom:6px}
+.upload-text{font-size:.82rem;font-weight:700;color:var(--text-2)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* ============================================================
+   HEALTHY SWAPS
+============================================================ */
+.swap-card{background:var(--white);border-radius:var(--r);border:1px solid var(--border);padding:12px 14px;margin-bottom:10px;display:flex;align-items:center;gap:12px}
+.swap-from{flex:1;font-size:.85rem;font-weight:700;text-align:center;background:var(--warm-gray);padding:8px;border-radius:var(--r-sm)}
+.swap-arrow{font-size:1.2rem;color:var(--green);flex-shrink:0}
+.swap-to{flex:1;font-size:.85rem;font-weight:700;text-align:center;background:var(--green-pale);color:#166534;padding:8px;border-radius:var(--r-sm)}
+
+/* ============================================================
+   TOAST
+============================================================ */
+#toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--text);color:#fff;padding:10px 20px;border-radius:50px;font-size:.85rem;font-weight:700;z-index:999;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;max-width:90vw}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ============================================================
+   MODAL
+============================================================ */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:400;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;backdrop-filter:blur(4px)}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal-sheet{background:var(--white);border-radius:24px 24px 0 0;width:100%;max-width:480px;max-height:80vh;overflow-y:auto;transform:translateY(100%);transition:transform .35s cubic-bezier(.34,1.25,.64,1);padding:20px}
+.modal-overlay.open .modal-sheet{transform:translateY(0)}
+.modal-handle{width:40px;height:4px;border-radius:4px;background:var(--border);margin:0 auto 16px}
+.modal-title{font-size:1.1rem;font-weight:800;margin-bottom:14px;text-align:center}
+
+/* ============================================================
+   SKELETON LOADER
+============================================================ */
+.skeleton{background:linear-gradient(90deg,var(--border) 25%,var(--warm-gray) 50%,var(--border) 75%);background-size:200% 100%;animation:shimmer 1.2s infinite;border-radius:var(--r-sm)}
+@keyframes shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .4s ease both}
+.fade-up-1{animation-delay:.05s}
+.fade-up-2{animation-delay:.1s}
+.fade-up-3{animation-delay:.15s}
+.fade-up-4{animation-delay:.2s}
+
+/* ============================================================
+   SEARCH VIEW
+============================================================ */
+.search-view-bar{display:flex;gap:10px;align-items:center;margin-bottom:16px}
+.search-view-input{flex:1;padding:10px 16px;border-radius:50px;border:1.5px solid var(--border);font-family:var(--font-b);font-size:.9rem;background:var(--white);outline:none;transition:border-color .2s}
+.search-view-input:focus{border-color:var(--orange)}
+.search-cancel{font-size:.85rem;font-weight:700;color:var(--orange);border:none;background:transparent;flex-shrink:0;white-space:nowrap}
+.search-chips{display:flex;gap:6px;overflow-x:auto;margin-bottom:16px;scrollbar-width:none;padding-bottom:4px}
+.search-chips::-webkit-scrollbar{display:none}
+
+/* ============================================================
+   PROFILE VIEW
+============================================================ */
+.profile-header{background:linear-gradient(135deg,var(--orange),#FDBA74);border-radius:var(--r-xl);padding:24px;margin-bottom:20px;text-align:center;position:relative}
+.profile-avatar{width:72px;height:72px;border-radius:50%;background:rgba(255,255,255,.3);border:3px solid rgba(255,255,255,.6);margin:0 auto 10px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.profile-name{font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:2px}
+.profile-sub{font-size:.8rem;color:rgba(255,255,255,.8);font-weight:600}
+.profile-stats{display:flex;margin-top:14px;gap:1px;background:rgba(255,255,255,.2);border-radius:var(--r);overflow:hidden}
+.profile-stat{flex:1;padding:10px;text-align:center;background:rgba(255,255,255,.15)}
+.profile-stat-num{font-size:1.2rem;font-weight:900;color:#fff}
+.profile-stat-lab{font-size:.68rem;font-weight:700;color:rgba(255,255,255,.8);text-transform:uppercase}
+.profile-menu-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--white);border-radius:var(--r);border:1px solid var(--border);margin-bottom:8px;cursor:pointer;transition:background .2s}
+.profile-menu-item:hover{background:var(--warm-gray)}
+.profile-menu-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.profile-menu-text{flex:1;font-size:.88rem;font-weight:700}
+.profile-menu-arrow{color:var(--text-3);font-size:.9rem}
+
+/* MISC TWEAKS */
+.divider{height:1px;background:var(--border);margin:20px 0}
+.tag-healthy{background:#D1FAE5;color:#065F46}
+.tag-protein{background:#DBEAFE;color:#1E40AF}
+.tag-budget{background:#FEF9C3;color:#713F12}
+.tag-lowcarb{background:#FCE7F3;color:#9D174D}
+.tag-quick{background:#E0E7FF;color:#3730A3}
+
+/* ============================================================
+   CALENDAR VIEW
+============================================================ */
+.cal-top-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.cal-nav-btn{background:var(--warm-gray);border:none;border-radius:50%;width:34px;height:34px;font-size:1rem;cursor:pointer;transition:background .2s;display:flex;align-items:center;justify-content:center}
+.cal-nav-btn:hover{background:var(--orange-pale)}
+.cal-month-label{font-family:var(--font-d);font-size:1.1rem;font-weight:600}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:12px}
+.cal-day-label{text-align:center;font-size:.68rem;font-weight:800;color:var(--text-3);text-transform:uppercase;padding:4px 0}
+.cal-day{aspect-ratio:1;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;cursor:pointer;position:relative;background:transparent;border:none;color:var(--text-2);transition:background .15s}
+.cal-day:hover{background:var(--warm-gray)}
+.cal-day.has-meal{background:var(--orange-pale);color:var(--orange-dark)}
+.cal-day.today{background:var(--orange);color:#fff;box-shadow:0 2px 8px rgba(249,115,22,.4)}
+.cal-day.empty{visibility:hidden;pointer-events:none}
+.cal-day .meal-dot-row{display:flex;gap:2px;margin-top:2px}
+.meal-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.dot-green{background:var(--green)}
+.dot-yellow{background:var(--yellow)}
+.dot-red{background:var(--red)}
+.dot-orange{background:var(--orange)}
+.cal-legend{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.cal-legend-item{display:flex;align-items:center;gap:5px;font-size:.72rem;font-weight:700;color:var(--text-2)}
+.cal-detail-panel{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:14px;margin-bottom:12px}
+.cal-detail-date{font-size:.8rem;font-weight:800;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:10px}
+.cal-meal-entry{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px dashed var(--border)}
+.cal-meal-entry:last-child{border:none}
+.cal-meal-type{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--text-3);min-width:72px}
+.cal-meal-name{flex:1;font-size:.88rem;font-weight:700;color:var(--text)}
+.cal-meal-tag{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.cal-add-btn{width:28px;height:28px;border-radius:50%;border:1.5px dashed var(--border);background:transparent;display:flex;align-items:center;justify-content:center;font-size:1rem;color:var(--text-3);cursor:pointer;transition:all .2s}
+.cal-add-btn:hover{border-color:var(--orange);color:var(--orange)}
+.repeat-alert-box{background:#FFFBEB;border:1.5px solid var(--yellow);border-radius:var(--r);padding:12px 14px;margin-bottom:12px;display:flex;align-items:flex-start;gap:10px}
+.repeat-alert-text{font-size:.84rem;font-weight:700;color:#713F12;line-height:1.45}
+.repeat-alt-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.alt-chip{background:var(--green-pale);color:#166534;border-radius:50px;padding:4px 11px;font-size:.72rem;font-weight:800;cursor:pointer;transition:background .15s}
+.alt-chip:hover{background:#BBF7D0}
+
+/* ============================================================
+   BUDGET PLANNER VIEW
+============================================================ */
+.budget-view-hero{background:linear-gradient(135deg,var(--green),#22C55E);border-radius:var(--r-xl);padding:20px;margin-bottom:16px;color:#fff;position:relative;overflow:hidden}
+.budget-view-hero::before{content:'💸';position:absolute;right:-10px;top:-10px;font-size:5rem;opacity:.15}
+.budget-view-title{font-family:var(--font-d);font-size:1.3rem;font-weight:600;margin-bottom:4px}
+.budget-view-sub{font-size:.82rem;opacity:.9;font-weight:600}
+.budget-form-card{background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border);padding:16px;margin-bottom:14px;box-shadow:var(--shadow-sm)}
+.budget-input-label{font-size:.75rem;font-weight:800;color:var(--text-2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:5px}
+.budget-peso-input{display:flex;align-items:center;background:var(--cream);border:1.5px solid var(--border);border-radius:var(--r-sm);overflow:hidden;transition:border-color .2s}
+.budget-peso-input:focus-within{border-color:var(--green)}
+.budget-peso-sym{padding:10px 10px;font-size:1rem;font-weight:800;color:var(--green);background:var(--green-pale)}
+.budget-peso-field{flex:1;border:none;background:transparent;padding:10px 12px;font-family:var(--font-b);font-size:1rem;font-weight:700;color:var(--text);outline:none}
+.occasion-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.occasion-btn{background:var(--warm-gray);border:1.5px solid transparent;border-radius:var(--r);padding:10px 8px;text-align:center;font-size:.78rem;font-weight:700;cursor:pointer;font-family:var(--font-b);transition:all .2s;color:var(--text-2)}
+.occasion-btn.selected{background:var(--green-light);border-color:var(--green);color:var(--green)}
+.occasion-btn:hover{border-color:var(--green);background:var(--green-light)}
+.occasion-emoji{font-size:1.3rem;display:block;margin-bottom:4px}
+.budget-results-card{background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow-sm)}
+.budget-results-header{background:var(--green-light);padding:12px 16px;border-bottom:1px solid var(--green-pale)}
+.budget-results-title{font-weight:800;font-size:.95rem;color:var(--green)}
+.budget-results-sub{font-size:.78rem;color:#166534;font-weight:600;margin-top:2px}
+.budget-rec-item{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s}
+.budget-rec-item:hover{background:var(--warm-gray)}
+.budget-rec-item:last-child{border:none}
+.budget-rec-img{width:52px;height:52px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.budget-rec-info{flex:1}
+.budget-rec-name{font-size:.88rem;font-weight:800;margin-bottom:2px}
+.budget-rec-meta{font-size:.74rem;font-weight:700;color:var(--text-2)}
+.budget-rec-cost{text-align:right}
+.budget-rec-price{font-size:1rem;font-weight:900;color:var(--green)}
+.budget-rec-per{font-size:.7rem;font-weight:700;color:var(--text-3)}
+.budget-stretch-card{background:linear-gradient(135deg,#FFFBEB,#FEF9C3);border:1px solid rgba(234,179,8,.25);border-radius:var(--r-lg);padding:14px 16px;margin-top:12px}
+.budget-stretch-title{font-size:.88rem;font-weight:800;color:#713F12;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.budget-swap-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;font-size:.82rem;font-weight:700}
+.budget-swap-from{background:var(--warm-gray);border-radius:6px;padding:5px 9px;color:var(--text-2);text-decoration:line-through}
+.budget-swap-arrow{color:var(--green);font-size:1rem}
+.budget-swap-to{background:var(--green-pale);border-radius:6px;padding:5px 9px;color:#166534}
+
+/* ============================================================
+   SHARING ULAM VIEW
+============================================================ */
+.sharing-hero{background:linear-gradient(135deg,#7C3AED,#A78BFA);border-radius:var(--r-xl);padding:20px;margin-bottom:16px;color:#fff;position:relative;overflow:hidden}
+.sharing-hero::before{content:'🤝';position:absolute;right:-10px;top:-10px;font-size:5rem;opacity:.18}
+.sharing-hero-title{font-family:var(--font-d);font-size:1.3rem;font-weight:600;margin-bottom:4px}
+.sharing-hero-sub{font-size:.82rem;opacity:.9;font-weight:600;margin-bottom:12px}
+.sharing-stats-row{display:flex;gap:8px}
+.sharing-stat{background:rgba(255,255,255,.2);border-radius:var(--r-sm);padding:8px 12px;text-align:center;flex:1}
+.sharing-stat-num{font-size:1.2rem;font-weight:900}
+.sharing-stat-lab{font-size:.65rem;font-weight:700;opacity:.85;text-transform:uppercase}
+.sharing-listing-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:10px;box-shadow:var(--shadow-sm);cursor:pointer;transition:transform .2s,box-shadow .2s}
+.sharing-listing-card:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.sharing-listing-img{height:90px;position:relative;display:flex;align-items:center;justify-content:center;font-size:3.5rem;overflow:hidden}
+.sharing-listing-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 50%)}
+.sharing-listing-price-badge{position:absolute;top:10px;right:10px}
+.sharing-listing-dist{position:absolute;bottom:8px;left:10px;color:#fff;font-size:.72rem;font-weight:800;display:flex;align-items:center;gap:4px}
+.sharing-listing-body{padding:12px 14px}
+.sharing-listing-name{font-size:.92rem;font-weight:800;margin-bottom:4px}
+.sharing-listing-meta{font-size:.76rem;font-weight:700;color:var(--text-2);margin-bottom:8px;display:flex;gap:10px;flex-wrap:wrap}
+.sharing-listing-poster{display:flex;align-items:center;gap:8px}
+.sharing-poster-avatar{width:28px;height:28px;border-radius:50%;background:var(--orange-pale);font-size:.75rem;font-weight:800;display:flex;align-items:center;justify-content:center;color:var(--orange-dark);flex-shrink:0}
+.sharing-poster-info{flex:1}
+.sharing-poster-name{font-size:.78rem;font-weight:800;color:var(--text)}
+.sharing-poster-rating{font-size:.7rem;color:var(--yellow);font-weight:700}
+.sharing-actions{display:flex;gap:7px;margin-top:10px}
+.btn-chat{background:var(--warm-gray);border:none;border-radius:50px;padding:7px 14px;font-size:.78rem;font-weight:700;cursor:pointer;font-family:var(--font-b);color:var(--text-2);transition:background .2s}
+.btn-chat:hover{background:var(--orange-pale);color:var(--orange)}
+.btn-claim{background:var(--orange);color:#fff;border:none;border-radius:50px;padding:7px 16px;font-size:.78rem;font-weight:800;cursor:pointer;font-family:var(--font-b);flex:1;transition:background .2s}
+.btn-claim:hover{background:var(--orange-dark)}
+.post-btn-big{width:100%;background:linear-gradient(135deg,#7C3AED,#A78BFA);color:#fff;border:none;border-radius:var(--r-lg);padding:14px;font-family:var(--font-b);font-size:.95rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:4px;transition:opacity .2s}
+.post-btn-big:hover{opacity:.9}
+.share-filter-row{display:flex;gap:7px;overflow-x:auto;padding-bottom:4px;margin-bottom:14px;scrollbar-width:none}
+.share-filter-row::-webkit-scrollbar{display:none}
+
+/* ============================================================
+   REF KO (AI INGREDIENT FEATURE) VIEW
+============================================================ */
+.ref-hero{background:linear-gradient(135deg,#0F766E,#14B8A6);border-radius:var(--r-xl);padding:20px;margin-bottom:16px;color:#fff;position:relative;overflow:hidden}
+.ref-hero::before{content:'🧊';position:absolute;right:-10px;top:-10px;font-size:5rem;opacity:.18}
+.ref-hero-title{font-family:var(--font-d);font-size:1.3rem;font-weight:600;margin-bottom:4px}
+.ref-hero-sub{font-size:.82rem;opacity:.9;font-weight:600}
+.ref-input-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);padding:16px;margin-bottom:14px;box-shadow:var(--shadow-sm)}
+.ref-input-row{display:flex;gap:8px;margin-bottom:10px}
+.ref-text-input{flex:1;padding:10px 14px;border-radius:50px;border:1.5px solid var(--border);font-family:var(--font-b);font-size:.9rem;background:var(--cream);outline:none;transition:border-color .2s;color:var(--text)}
+.ref-text-input:focus{border-color:#0F766E;background:#fff}
+.btn-add-ing{background:#0F766E;color:#fff;border:none;border-radius:50px;padding:10px 16px;font-family:var(--font-b);font-weight:800;font-size:.82rem;cursor:pointer;white-space:nowrap;transition:background .2s}
+.btn-add-ing:hover{background:#0D6060}
+.ref-tags-area{display:flex;flex-wrap:wrap;gap:6px;min-height:32px;margin-bottom:10px}
+.ref-ing-tag{background:var(--orange-pale);color:var(--orange-dark);border-radius:50px;padding:5px 10px 5px 12px;font-size:.78rem;font-weight:800;display:flex;align-items:center;gap:5px;cursor:pointer;transition:background .15s}
+.ref-ing-tag:hover{background:#FED7AA}
+.ref-ing-tag-x{font-size:.85rem;opacity:.6;font-weight:900}
+.ref-empty-msg{font-size:.82rem;color:var(--text-3);font-weight:600;font-style:italic}
+.btn-suggest-ai{width:100%;background:linear-gradient(135deg,#0F766E,#14B8A6);color:#fff;border:none;border-radius:var(--r-lg);padding:14px;font-family:var(--font-b);font-size:.95rem;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .2s}
+.btn-suggest-ai:hover{opacity:.9}
+.btn-suggest-ai:disabled{opacity:.5;cursor:not-allowed}
+.ai-loading{display:flex;align-items:center;gap:10px;padding:20px;justify-content:center;color:var(--text-2);font-weight:700;font-size:.88rem}
+.ai-loading-spinner{width:22px;height:22px;border:3px solid var(--border);border-top-color:#0F766E;border-radius:50%;animation:spin .7s linear infinite}
+.ai-result-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:10px;box-shadow:var(--shadow-sm)}
+.ai-result-header{background:linear-gradient(135deg,#F0FDFA,#CCFBF1);padding:12px 14px;border-bottom:1px solid #99F6E4}
+.ai-result-title{font-weight:800;font-size:.9rem;color:#0F766E;display:flex;align-items:center;gap:6px}
+.ai-result-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s}
+.ai-result-item:hover{background:var(--warm-gray)}
+.ai-result-item:last-child{border:none}
+.ai-result-emoji{font-size:1.6rem;width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:var(--warm-gray);border-radius:10px;flex-shrink:0}
+.ai-result-info{flex:1}
+.ai-result-name{font-size:.9rem;font-weight:800;margin-bottom:2px}
+.ai-result-why{font-size:.75rem;font-weight:600;color:var(--text-2);line-height:1.4}
+.ai-result-arrow{color:var(--text-3);font-size:.9rem}
+.ai-quick-ings{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.quick-ing-btn{background:var(--warm-gray);border:1.5px dashed var(--border);border-radius:50px;padding:6px 12px;font-size:.76rem;font-weight:700;cursor:pointer;font-family:var(--font-b);color:var(--text-2);transition:all .2s}
+.quick-ing-btn:hover{background:var(--orange-pale);border-color:var(--orange);color:var(--orange)}
+</style>
+</head>
+<body>
+
+<!-- ===== TOP NAV ===== -->
+<nav id="topnav">
+  <div class="nav-inner">
+    <div class="nav-logo" onclick="showView('home')">
+      <div class="nav-logo-icon">🍚</div>
+      <div class="nav-logo-text">Ulam Ideas <span>PH</span></div>
+    </div>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" onclick="showView('search')" title="Search">🔍</button>
+      <button class="nav-icon-btn" onclick="showRandomModal()" title="Random Ulam">🎲</button>
+      <button class="nav-icon-btn" onclick="showView('favorites')" title="Favorites">
+        ❤️<span class="nav-badge" id="fav-count" style="display:none">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== VIEWS CONTAINER ===== -->
+<div id="app">
+
+<!-- ==================== HOME VIEW ==================== -->
+<div class="view active" id="view-home">
+  <div class="main-content">
+
+    <!-- Hero -->
+    <div class="hero fade-up">
+      <div class="hero-top">
+        <span class="hero-greeting">Kamusta, Kainan Time! 👋</span>
+        <span class="hero-date" id="today-date"></span>
+      </div>
+      <div class="hero-headline">Walang maisip na ulam?<br>We got you! 🍽️</div>
+      <div class="hero-sub">Luto na tayo ng masarap at tipid!</div>
+      <div class="hero-search">
+        <input type="text" id="home-search" placeholder="Search ulam ideas…" oninput="liveSearch(this.value)" onkeypress="if(event.key==='Enter'){doSearch(this.value)}">
+        <button onclick="doSearch(document.getElementById('home-search').value)">Hanapin</button>
+      </div>
+    </div>
+
+    <!-- Quick Filters -->
+    <div class="filters-scroll fade-up fade-up-1">
+      <div class="chip active" onclick="filterTag('all',this)">🍽️ Lahat</div>
+      <div class="chip" onclick="filterTag('budget',this)">💸 Budget-Friendly</div>
+      <div class="chip" onclick="filterTag('healthy',this)">🥗 Healthy</div>
+      <div class="chip" onclick="filterTag('quick',this)">⚡ Quick (30min)</div>
+      <div class="chip" onclick="filterTag('highprotein',this)">💪 High Protein</div>
+      <div class="chip" onclick="filterTag('lowcarb',this)">🌿 Low Carb</div>
+    </div>
+
+    <!-- Today's Suggestion -->
+    <div class="section-header fade-up fade-up-2">
+      <div class="section-title">☀️ Today's Ulam Suggestion</div>
+      <button class="see-all" onclick="newSuggestion()">Iba pa ›</button>
+    </div>
+    <div class="today-card fade-up fade-up-2" id="today-card" onclick="">
+      <div class="today-img" id="today-img-area">
+        <div class="today-emoji-bg" id="today-emoji"></div>
+        <div class="today-img-overlay"></div>
+        <div class="today-tag"><span class="badge badge-orange" id="today-cat-badge"></span></div>
+        <div class="today-badges" id="today-badges"></div>
+      </div>
+      <div class="today-body">
+        <div class="today-name" id="today-name"></div>
+        <div class="today-meta">
+          <div class="today-meta-item">⏱ <span id="today-time"></span></div>
+          <div class="today-meta-item">💰 <span id="today-cost"></span></div>
+          <div class="today-meta-item">👨‍👩‍👧 <span id="today-servings"></span></div>
+        </div>
+        <div class="today-actions">
+          <button class="btn btn-primary btn-sm" id="today-view-btn" onclick="">👁️ Tingnan Recipe</button>
+          <button class="btn btn-ghost btn-sm" id="today-save-btn" onclick="">🤍 I-save</button>
+          <button class="btn btn-ghost btn-sm" id="today-plan-btn" onclick="">📅 Plan</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Categories -->
+    <div class="section-header fade-up fade-up-3">
+      <div class="section-title">📂 Browse Categories</div>
+    </div>
+    <div class="cat-grid fade-up fade-up-3" id="cat-grid"></div>
+
+    <!-- Trending -->
+    <div class="section-header fade-up">
+      <div class="section-title">🔥 Trending Ngayon</div>
+      <span class="see-all" onclick="showView('search')">Lahat ›</span>
+    </div>
+    <div class="fade-up" id="trending-list"></div>
+
+    <!-- Budget Picks -->
+    <div class="section-header fade-up">
+      <div class="section-title">💸 Budget-Friendly Picks</div>
+      <span class="see-all" onclick="filterAndShowAll('budget')">Lahat ›</span>
+    </div>
+    <div class="hscroll fade-up" id="budget-scroll"></div>
+
+    <!-- Healthy Options -->
+    <div class="divider"></div>
+    <div class="section-header fade-up">
+      <div class="section-title">🥗 Healthy Meals</div>
+      <span class="see-all" onclick="filterAndShowAll('healthy')">Lahat ›</span>
+    </div>
+    <div class="hscroll fade-up" id="healthy-scroll"></div>
+
+    <!-- Tipid Tips -->
+    <div class="divider"></div>
+    <div class="section-header fade-up">
+      <div class="section-title">💡 Tipid Tips</div>
+    </div>
+    <div id="tipid-list" class="fade-up"></div>
+
+    <!-- Healthy Swaps -->
+    <div class="divider"></div>
+    <div class="section-header fade-up">
+      <div class="section-title">🔄 Healthy Swaps</div>
+    </div>
+    <div id="swaps-list" class="fade-up"></div>
+
+    <!-- Submit Recipe -->
+    <div class="divider"></div>
+    <div style="background:linear-gradient(135deg,#FFF7ED,#FFEDD5);border-radius:var(--r-xl);padding:20px;text-align:center;border:1px solid rgba(249,115,22,.2)" class="fade-up">
+      <div style="font-size:2rem;margin-bottom:8px">👨‍🍳</div>
+      <div style="font-size:1rem;font-weight:800;margin-bottom:4px">May recipe ka rin?</div>
+      <div style="font-size:.82rem;color:var(--text-2);font-weight:600;margin-bottom:14px;line-height:1.5">I-share ang iyong paboritong ulam sa buong Pilipinas!</div>
+      <button class="btn btn-primary" onclick="showView('submit')">📤 Mag-submit ng Recipe</button>
+    </div>
+    <div style="height:20px"></div>
+
+  </div>
+</div>
+
+<!-- ==================== SEARCH VIEW ==================== -->
+<div class="view" id="view-search">
+  <div class="main-content">
+    <div class="search-view-bar fade-up">
+      <input class="search-view-input" type="text" id="search-input" placeholder="Hanapin ang ulam mo…" oninput="doSearch(this.value)" autofocus>
+      <button class="search-cancel" onclick="showView('home')">Bumalik</button>
+    </div>
+    <div class="search-chips fade-up" id="search-chips"></div>
+    <div id="search-results"></div>
+  </div>
+</div>
+
+<!-- ==================== PLANNER VIEW ==================== -->
+<div class="view" id="view-planner">
+  <div class="main-content">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px" class="fade-up">
+      <div>
+        <div class="section-title">📅 Weekly Meal Planner</div>
+        <div style="font-size:.78rem;color:var(--text-2);font-weight:600;margin-top:2px">I-plan ang kainan ng buong linggo</div>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="generateGrocery()">🛒 Grocery List</button>
+    </div>
+    <div id="planner-days" class="fade-up"></div>
+    <div id="grocery-output"></div>
+  </div>
+</div>
+
+<!-- ==================== FAVORITES VIEW ==================== -->
+<div class="view" id="view-favorites">
+  <div class="main-content">
+    <div style="margin-bottom:16px" class="fade-up">
+      <div class="section-title">❤️ Saved Recipes</div>
+      <div style="font-size:.78rem;color:var(--text-2);font-weight:600;margin-top:2px">Mga paboritong ulam mo</div>
+    </div>
+    <div id="favorites-list" class="fade-up"></div>
+  </div>
+</div>
+
+<!-- ==================== RECIPE DETAIL VIEW ==================== -->
+<div class="view" id="view-recipe">
+  <div style="max-width:480px;margin:0 auto;padding-bottom:90px" id="recipe-detail-content"></div>
+</div>
+
+<!-- ==================== SUBMIT VIEW ==================== -->
+<div class="view" id="view-submit">
+  <div class="main-content">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px" class="fade-up">
+      <button class="btn btn-ghost btn-sm" onclick="showView('home')">← Bumalik</button>
+      <div class="section-title">👨‍🍳 Submit a Recipe</div>
+    </div>
+    <div class="submit-form fade-up">
+      <div class="form-group">
+        <label class="form-label">Pangalan ng Ulam *</label>
+        <input class="form-input" type="text" placeholder="e.g. Adobong Manok">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Category</label>
+          <select class="form-input">
+            <option>Filipino</option><option>Asian</option><option>Western</option>
+            <option>Chinese</option><option>Healthy</option><option>Budget</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Prep Time</label>
+          <input class="form-input" type="text" placeholder="e.g. 30 mins">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Est. Cost (₱)</label>
+          <input class="form-input" type="number" placeholder="150">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Servings</label>
+          <input class="form-input" type="number" placeholder="4">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Mga Sangkap (Ingredients)</label>
+        <textarea class="form-input" placeholder="1 kg manok&#10;2 baso ng suka&#10;1/4 baso ng toyo…"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Paraan ng Pagluluto (Steps)</label>
+        <textarea class="form-input" style="min-height:120px" placeholder="1. Hugasan ang manok…&#10;2. Igisa ang bawang…"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Larawan ng Ulam</label>
+        <div class="upload-area" onclick="toast('Photo upload coming soon! 📸')">
+          <div class="upload-icon">📷</div>
+          <div class="upload-text">I-tap para mag-upload ng photo</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="submitRecipe()">📤 I-submit ang Recipe</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PROFILE VIEW ==================== -->
+<div class="view" id="view-profile">
+  <div class="main-content">
+    <div class="profile-header fade-up">
+      <div class="profile-avatar">🧑‍🍳</div>
+      <div class="profile-name" id="profile-name">Guest Cook</div>
+      <div class="profile-sub">Ulam Ideas PH Member</div>
+      <div class="profile-stats">
+        <div class="profile-stat">
+          <div class="profile-stat-num" id="stat-saved">0</div>
+          <div class="profile-stat-lab">Saved</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-num" id="stat-planned">0</div>
+          <div class="profile-stat-lab">Planned</div>
+        </div>
+        <div class="profile-stat">
+          <div class="profile-stat-num">9</div>
+          <div class="profile-stat-lab">Recipes</div>
+        </div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="profile-menu-item" onclick="showView('favorites')">
+        <div class="profile-menu-icon" style="background:var(--orange-pale)">❤️</div>
+        <div class="profile-menu-text">Saved Recipes</div>
+        <div class="profile-menu-arrow">›</div>
+      </div>
+      <div class="profile-menu-item" onclick="showView('planner')">
+        <div class="profile-menu-icon" style="background:var(--green-pale)">📅</div>
+        <div class="profile-menu-text">Weekly Planner</div>
+        <div class="profile-menu-arrow">›</div>
+      </div>
+      <div class="profile-menu-item" onclick="showView('submit')">
+        <div class="profile-menu-icon" style="background:#EDE9FE">👨‍🍳</div>
+        <div class="profile-menu-text">Submit a Recipe</div>
+        <div class="profile-menu-arrow">›</div>
+      </div>
+      <div class="profile-menu-item" onclick="showRandomModal()">
+        <div class="profile-menu-icon" style="background:#FEF9C3">🎲</div>
+        <div class="profile-menu-text">Random Ulam Generator</div>
+        <div class="profile-menu-arrow">›</div>
+      </div>
+      <div class="profile-menu-item" onclick="toast('Settings coming soon! ⚙️')">
+        <div class="profile-menu-icon" style="background:var(--warm-gray)">⚙️</div>
+        <div class="profile-menu-text">Settings</div>
+        <div class="profile-menu-arrow">›</div>
+      </div>
+      <div style="height:12px"></div>
+      <button class="btn btn-secondary" style="width:100%;justify-content:center" onclick="toast('Login feature coming soon! 🔐')">
+        🔐 Login with Google / Facebook
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== REF KO VIEW ==================== -->
+<div class="view" id="view-ref">
+  <div class="main-content">
+    <div class="ref-hero fade-up">
+      <div class="ref-hero-title">🧊 Ano ang meron sa ref mo?</div>
+      <div class="ref-hero-sub">Ilagay ang mga ingredients at mag-sugest kami ng ulam para sa iyo!</div>
+    </div>
+    <div class="ref-input-card fade-up">
+      <div style="font-size:.8rem;font-weight:800;color:var(--text-2);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px">Mga Ingredients Mo</div>
+      <div class="ref-input-row">
+        <input class="ref-text-input" id="ref-ing-input" placeholder="e.g. manok, kamatis, bawang…" onkeydown="if(event.key==='Enter')addRefIng()">
+        <button class="btn-add-ing" onclick="addRefIng()">+ Dagdag</button>
+      </div>
+      <div class="ref-tags-area" id="ref-tags-area">
+        <span class="ref-empty-msg">Wala pang ingredients. Mag-dagdag ka na!</span>
+      </div>
+      <div style="font-size:.78rem;font-weight:800;color:var(--text-3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px;margin-top:4px">Mabilis na dagdag:</div>
+      <div class="ai-quick-ings" id="quick-ings"></div>
+      <button class="btn-suggest-ai" id="btn-suggest-ai" onclick="suggestFromRef()" disabled>
+        🤖 Suggest Ulam!
+      </button>
+    </div>
+    <div id="ref-ai-output"></div>
+  </div>
+</div>
+
+<!-- ==================== CALENDAR VIEW ==================== -->
+<div class="view" id="view-calendar">
+  <div class="main-content">
+    <div class="fade-up" style="margin-bottom:14px">
+      <div style="font-family:var(--font-d);font-size:1.3rem;font-weight:600;margin-bottom:2px">📅 Meal Calendar</div>
+      <div style="font-size:.78rem;color:var(--text-2);font-weight:600">Track kung anong ulam ang niluto mo</div>
+    </div>
+    <div class="fade-up" style="background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border);padding:14px;margin-bottom:12px;box-shadow:var(--shadow-sm)">
+      <div class="cal-top-bar">
+        <button class="cal-nav-btn" onclick="calPrevMonth()">←</button>
+        <div class="cal-month-label" id="cal-month-label">Abril 2026</div>
+        <button class="cal-nav-btn" onclick="calNextMonth()">→</button>
+      </div>
+      <div class="cal-grid" id="cal-grid"></div>
+      <div class="cal-legend">
+        <div class="cal-legend-item"><span class="meal-dot dot-green"></span>Healthy</div>
+        <div class="cal-legend-item"><span class="meal-dot dot-yellow"></span>Budget</div>
+        <div class="cal-legend-item"><span class="meal-dot dot-red"></span>Special</div>
+        <div class="cal-legend-item"><span class="meal-dot dot-orange"></span>Iba pa</div>
+      </div>
+    </div>
+    <div id="cal-repeat-alert"></div>
+    <div id="cal-detail-panel"></div>
+  </div>
+</div>
+
+<!-- ==================== BUDGET PLANNER VIEW ==================== -->
+<div class="view" id="view-budget">
+  <div class="main-content">
+    <div class="budget-view-hero fade-up">
+      <div class="budget-view-title">💸 Budget Planner</div>
+      <div class="budget-view-sub">Ilagay ang budget mo at magsu-suggest kami ng pinakamasarap na ulam!</div>
+    </div>
+    <div class="budget-form-card fade-up">
+      <div style="margin-bottom:12px">
+        <div class="budget-input-label">Kabuuang Budget</div>
+        <div class="budget-peso-input">
+          <span class="budget-peso-sym">₱</span>
+          <input class="budget-peso-field" type="number" id="budget-amount" placeholder="300" min="50" oninput="runBudgetCalc()">
+        </div>
+      </div>
+      <div style="margin-bottom:12px">
+        <div class="budget-input-label">Bilang ng Tao (Servings)</div>
+        <div class="budget-peso-input">
+          <span class="budget-peso-sym">👥</span>
+          <input class="budget-peso-field" type="number" id="budget-servings" placeholder="4" min="1" max="20" oninput="runBudgetCalc()">
+        </div>
+      </div>
+      <div class="budget-input-label" style="margin-bottom:8px">Okasyon</div>
+      <div class="occasion-grid" id="occasion-grid">
+        <button class="occasion-btn selected" data-occ="daily" onclick="selectOccasion(this)"><span class="occasion-emoji">🍽️</span>Daily Meal</button>
+        <button class="occasion-btn" data-occ="family" onclick="selectOccasion(this)"><span class="occasion-emoji">👨‍👩‍👧‍👦</span>Family</button>
+        <button class="occasion-btn" data-occ="celebration" onclick="selectOccasion(this)"><span class="occasion-emoji">🎉</span>Selebrasyon</button>
+        <button class="occasion-btn" data-occ="mealprep" onclick="selectOccasion(this)"><span class="occasion-emoji">📦</span>Meal Prep</button>
+      </div>
+    </div>
+    <div id="budget-results"></div>
+  </div>
+</div>
+
+<!-- ==================== SHARING ULAM VIEW ==================== -->
+<div class="view" id="view-sharing">
+  <div class="main-content">
+    <div class="sharing-hero fade-up">
+      <div class="sharing-hero-title">🤝 Sharing Ulam Nearby</div>
+      <div class="sharing-hero-sub">May sobrang luto? I-share sa mga kapitbahay mo!</div>
+      <div class="sharing-stats-row">
+        <div class="sharing-stat"><div class="sharing-stat-num">6</div><div class="sharing-stat-lab">Listings</div></div>
+        <div class="sharing-stat"><div class="sharing-stat-num">2km</div><div class="sharing-stat-lab">Saklaw</div></div>
+        <div class="sharing-stat"><div class="sharing-stat-num">3</div><div class="sharing-stat-lab">Libre</div></div>
+      </div>
+    </div>
+    <div class="share-filter-row fade-up">
+      <div class="chip active" onclick="setSharingFilter('all',this)">🍽️ Lahat</div>
+      <div class="chip" onclick="setSharingFilter('free',this)">🆓 Libre</div>
+      <div class="chip" onclick="setSharingFilter('1km',this)">📍 1km</div>
+      <div class="chip" onclick="setSharingFilter('ulam',this)">🍲 Ulam</div>
+      <div class="chip" onclick="setSharingFilter('dessert',this)">🍰 Dessert</div>
+      <div class="chip" onclick="setSharingFilter('kakanin',this)">🍡 Kakanin</div>
+    </div>
+    <div id="sharing-listings" class="fade-up"></div>
+    <button class="post-btn-big fade-up" onclick="showPostSharingModal()">
+      📤 Mag-post ng Ulam Mo
+    </button>
+  </div>
+</div>
+
+</div><!-- end #app -->
+
+<!-- ===== CAL MEAL MODAL ===== -->
+<div class="modal-overlay" id="cal-modal" onclick="closeModal('cal-modal')">
+  <div class="modal-sheet" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <div class="modal-title" id="cal-modal-title">Mag-dagdag ng Ulam</div>
+    <div id="cal-modal-options"></div>
+    <button class="btn btn-ghost" style="width:100%;justify-content:center;margin-top:10px" onclick="closeModal('cal-modal')">Kanselahin</button>
+  </div>
+</div>
+
+<!-- ===== SHARING POST MODAL ===== -->
+<div class="modal-overlay" id="post-sharing-modal" onclick="closeModal('post-sharing-modal')">
+  <div class="modal-sheet" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <div class="modal-title">📤 I-post ang Ulam Mo</div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div>
+        <div class="budget-input-label" style="margin-bottom:5px">Pangalan ng Ulam</div>
+        <input class="form-input" id="post-dish-name" type="text" placeholder="e.g. Kare-Kare, Bibingka…">
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div>
+          <div class="budget-input-label" style="margin-bottom:5px">Servings</div>
+          <input class="form-input" type="number" placeholder="4" min="1">
+        </div>
+        <div>
+          <div class="budget-input-label" style="margin-bottom:5px">Pickup Deadline</div>
+          <input class="form-input" type="time" value="18:00">
+        </div>
+      </div>
+      <div>
+        <div class="budget-input-label" style="margin-bottom:5px">Presyo</div>
+        <div style="display:flex;gap:8px">
+          <button class="btn btn-green btn-sm" id="post-free-btn" onclick="setPostPrice('free')" style="flex:1;justify-content:center">🆓 Libre</button>
+          <button class="btn btn-ghost btn-sm" id="post-paid-btn" onclick="setPostPrice('paid')" style="flex:1;justify-content:center">💰 May bayad</button>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg" style="width:100%;justify-content:center" onclick="submitSharingPost()">📤 I-post Na!</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== BOTTOM NAV ===== -->
+<nav id="bottomnav">
+  <div class="bnav-inner">
+    <button class="bnav-item active" onclick="showView('home')" data-view="home">
+      <span class="bnav-icon">🏠</span>
+      <span>Home</span>
+      <span class="bnav-dot"></span>
+    </button>
+    <button class="bnav-item" onclick="showView('ref')" data-view="ref">
+      <span class="bnav-icon">🧊</span>
+      <span>Ref Ko</span>
+      <span class="bnav-dot"></span>
+    </button>
+    <button class="bnav-item" onclick="showView('calendar')" data-view="calendar">
+      <span class="bnav-icon">📅</span>
+      <span>Kalendaryo</span>
+      <span class="bnav-dot"></span>
+    </button>
+    <button class="bnav-item" onclick="showView('budget')" data-view="budget">
+      <span class="bnav-icon">💸</span>
+      <span>Budget</span>
+      <span class="bnav-dot"></span>
+    </button>
+    <button class="bnav-item" onclick="showView('sharing')" data-view="sharing">
+      <span class="bnav-icon">🤝</span>
+      <span>Sharing</span>
+      <span class="bnav-dot"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== TOAST ===== -->
+<div id="toast"></div>
+
+<!-- ===== RANDOM MODAL ===== -->
+<div class="modal-overlay" id="random-modal" onclick="closeModal('random-modal')">
+  <div class="modal-sheet" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <div class="random-card">
+      <h2>🎲 Random Ulam Generator</h2>
+      <p>Hindi makapag-desisyon? Let us decide for you!</p>
+      <div class="random-result" id="random-result">
+        <div class="random-result-img" id="rand-img" style="display:flex;align-items:center;justify-content:center;font-size:2.2rem;background:var(--orange-pale);border-radius:10px;width:70px;height:70px;flex-shrink:0"></div>
+        <div class="random-result-info">
+          <h3 id="rand-name">I-spin para magsimula!</h3>
+          <p id="rand-meta">Ang iyong random ulam ay lalabas dito</p>
+        </div>
+      </div>
+      <button class="spin-btn" id="spin-btn" onclick="spinRandom()">
+        <span class="spin-icon">🎲</span> <span>Ikutin!</span>
+      </button>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:4px">
+      <button class="btn btn-primary" style="flex:1;justify-content:center" id="rand-view-btn" onclick="">👁️ Tingnan Recipe</button>
+      <button class="btn btn-ghost" style="flex:1;justify-content:center" onclick="closeModal('random-modal')">Isara</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ADD TO PLANNER MODAL ===== -->
+<div class="modal-overlay" id="plan-modal" onclick="closeModal('plan-modal')">
+  <div class="modal-sheet" onclick="event.stopPropagation()">
+    <div class="modal-handle"></div>
+    <div class="modal-title">📅 Idagdag sa Weekly Plan</div>
+    <div id="plan-meal-name" style="text-align:center;font-size:.9rem;font-weight:700;color:var(--text-2);margin-bottom:14px"></div>
+    <div id="plan-options"></div>
+    <button class="btn btn-ghost" style="width:100%;justify-content:center;margin-top:10px" onclick="closeModal('plan-modal')">Kanselahin</button>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   DATA
+============================================================ */
+const RECIPES = [
+  {
+    id:1, name:'Adobong Manok', cat:'filipino', catLabel:'🇵🇭 Filipino', emoji:'🍗',
+    bg:'linear-gradient(135deg,#FFF7ED,#FFEDD5)',
+    time:'35 min', cost:'₱120–180', costNum:150, servings:'4–5 pax',
+    tags:['budget','highprotein'], nutrition:['High Protein','Budget-Friendly'],
+    trending:true, rating:4.9,
+    desc:'Ang paboritong ulam ng bawat Pilipino! Manok na nilaga sa suka, toyo, at bawang hanggang maging masarsa at masarap.',
+    ingredients:[
+      {amount:'1 kg',item:'manok, hiniwa'},
+      {amount:'1/2 tasa',item:'toyo (soy sauce)'},
+      {amount:'1/2 tasa',item:'suka (white vinegar)'},
+      {amount:'1 ulo',item:'bawang, dinurog'},
+      {amount:'3 piraso',item:'bay leaves'},
+      {amount:'1 kutsarita',item:'paminta (black pepper)'},
+      {amount:'2 kutsara',item:'mantika'},
+      {amount:'1/2 tasa',item:'tubig'},
+    ],
+    steps:[
+      'Igisa ang bawang sa mantika hanggang ginto.',
+      'Ilagay ang manok, lutuin hanggang kayumanggi sa lahat ng gilid.',
+      'Ibuhos ang toyo, suka, tubig. Huwag haluin — hayaang kumulo.',
+      'Ilagay ang bay leaves at paminta. Pakuluan.',
+      'Bawasan ang apoy, takpan, at lutuin ng 25–30 minuto.',
+      'Alisin ang takip, hayaang mabawasan ang sarsa hanggang malapot.',
+      'Ihain kasama ang mainit na kanin. Kain na!'
+    ]
+  },
+  {
+    id:2, name:'Sinigang na Baboy', cat:'filipino', catLabel:'🇵🇭 Filipino', emoji:'🍲',
+    bg:'linear-gradient(135deg,#F0FDF4,#DCFCE7)',
+    time:'1 oras', cost:'₱200–280', costNum:240, servings:'6 pax',
+    tags:['healthy','highprotein'], nutrition:['Healthy','High Protein'],
+    trending:true, rating:4.8,
+    desc:'Masarap na sabaw na may baboy at gulay. Ang asim-asim na lasa ng tamarind ay perpektong pampagana!',
+    ingredients:[
+      {amount:'1 kg',item:'baboy (tadyang o liempo)'},
+      {amount:'1 pack',item:'sinigang mix (sampalok)'},
+      {amount:'2 piraso',item:'kamatis, hiwa'},
+      {amount:'1 piraso',item:'sibuyas, hiwa'},
+      {amount:'1 piraso',item:'labanos, hiwa'},
+      {amount:'2 tasa',item:'kangkong'},
+      {amount:'2 piraso',item:'sitaw, hinati'},
+      {amount:'1 piraso',item:'talong, hiwa'},
+      {amount:'8 tasa',item:'tubig'},
+      {amount:'',item:'Patis at asin, pampalasa'},
+    ],
+    steps:[
+      'Pakuluan ang baboy kasama ang sibuyas at kamatis ng 45 minuto.',
+      'Ihalo ang sinigang mix. Tikman ang asim.',
+      'Ilagay ang labanos at sitaw, lutuin ng 5 minuto.',
+      'Dagdag ang talong, lutuin ng 3 minuto pa.',
+      'Huli, ilagay ang kangkong. Patayin ang apoy.',
+      'Timplahan ng patis at asin. Ihain agad habang mainit!'
+    ]
+  },
+  {
+    id:3, name:'Pinakbet Ilocano', cat:'healthy', catLabel:'🥗 Healthy', emoji:'🥦',
+    bg:'linear-gradient(135deg,#F0FDF4,#D1FAE5)',
+    time:'30 min', cost:'₱80–120', costNum:100, servings:'4 pax',
+    tags:['healthy','budget','lowcarb'], nutrition:['Healthy','Low Carb','Budget-Friendly'],
+    trending:false, rating:4.6,
+    desc:'Masustansyang gulay mula Ilocos — ampalaya, talong, okra, kalabasa, at bagoong. Tipid at masustansya!',
+    ingredients:[
+      {amount:'1 tasa',item:'baboy, hiniwa'},
+      {amount:'2 kutsara',item:'bagoong alamang'},
+      {amount:'1 piraso',item:'ampalaya, hiniwa'},
+      {amount:'1 piraso',item:'talong, hiniwa'},
+      {amount:'10 piraso',item:'okra'},
+      {amount:'2 piraso',item:'kamatis, hiniwa'},
+      {amount:'1 piraso',item:'sibuyas'},
+      {amount:'1 tasa',item:'kalabasa, hiniwa'},
+    ],
+    steps:[
+      'Igisa ang bawang at sibuyas, dagdag ang baboy.',
+      'Ilagay ang kamatis at bagoong, haluin at lutuin ng 2 minuto.',
+      'Dagdag ang kalabasa at 1/2 tasa tubig. Takpan, lutuin ng 5 minuto.',
+      'Ilagay ang natitirang gulay sa ibabaw. Huwag haluin.',
+      'Kapag luto na ang gulay, dahan-dahang haluin. Ihain!'
+    ]
+  },
+  {
+    id:4, name:'Crispy Pata', cat:'filipino', catLabel:'🇵🇭 Filipino', emoji:'🦵',
+    bg:'linear-gradient(135deg,#FEF9C3,#FDE68A)',
+    time:'3 oras', cost:'₱350–500', costNum:430, servings:'6–8 pax',
+    tags:['highprotein'], nutrition:['High Protein'],
+    trending:true, rating:4.9,
+    desc:'Ang hari ng handaan! Baboy na luto hanggang crispy sa labas pero malambot sa loob. Party staple ng mga Pilipino!',
+    ingredients:[
+      {amount:'1 buong',item:'pata ng baboy'},
+      {amount:'1 tasa',item:'toyo'},
+      {amount:'1/2 tasa',item:'suka'},
+      {amount:'1 kutsara',item:'paminta'},
+      {amount:'1 ulo',item:'bawang'},
+      {amount:'3 piraso',item:'bay leaves'},
+      {amount:'',item:'Asin, para sa pamahid'},
+      {amount:'',item:'Mantika, para sa pagpiprito'},
+    ],
+    steps:[
+      'Pakuluan ang pata kasama ang toyo, suka, bawang, paminta, at bay leaves ng 1.5 oras.',
+      'Alisin, hayaang lumamig. Patuyuin ng maigi.',
+      'Tusukin ang balat ng maraming ulit. Pahiran ng maraming asin.',
+      'Ilagay sa refrigerator nang bukas ng 1 oras o magdamag.',
+      'Iprito sa 170°C ng 15–20 minuto hanggang ginto at crispy.',
+      'Ilagay sa paper towel. Ihain ng buo kasama ang sawsawan!'
+    ]
+  },
+  {
+    id:5, name:'Tinolang Manok', cat:'filipino', catLabel:'🇵🇭 Filipino', emoji:'🍵',
+    bg:'linear-gradient(135deg,#ECFDF5,#D1FAE5)',
+    time:'40 min', cost:'₱100–150', costNum:125, servings:'4–6 pax',
+    tags:['healthy','budget','quick'], nutrition:['Healthy','Budget-Friendly'],
+    trending:false, rating:4.7,
+    desc:'Mainit na sabaw na may luya at manok. Kapag may sakit ka o malamig ang panahon, ito ang kailangan mo!',
+    ingredients:[
+      {amount:'1 kg',item:'manok, hiniwa'},
+      {amount:'1 piraso',item:'luya, julienned'},
+      {amount:'1 piraso',item:'sibuyas'},
+      {amount:'4 butil',item:'bawang'},
+      {amount:'1 piraso',item:'green papaya, hiniwa'},
+      {amount:'1 tasa',item:'dahon ng sili (chili leaves)'},
+      {amount:'2 kutsara',item:'patis (fish sauce)'},
+      {amount:'6 tasa',item:'tubig'},
+    ],
+    steps:[
+      'Igisa ang bawang, sibuyas, at luya hanggang mabango.',
+      'Ilagay ang manok, lutuin hanggang kayumanggi.',
+      'Ibuhos ang tubig at patis. Pakuluan, lutuin ng 25 minuto.',
+      'Ilagay ang green papaya, lutuin hanggang malambot (~10 min).',
+      'Huli, ilagay ang dahon ng sili. Patayin ang apoy agad. Ihain!'
+    ]
+  },
+  {
+    id:6, name:'Kare-Kare', cat:'filipino', catLabel:'🇵🇭 Filipino', emoji:'🥜',
+    bg:'linear-gradient(135deg,#FEF3C7,#FDE68A)',
+    time:'2.5 oras', cost:'₱300–450', costNum:380, servings:'6–8 pax',
+    tags:['highprotein'], nutrition:['High Protein'],
+    trending:true, rating:4.8,
+    desc:'Malapot na sabaw na gawa sa mani at katas ng atswete, kasama ang oxtail at gulay. Laging may kasamang bagoong!',
+    ingredients:[
+      {amount:'1 kg',item:'oxtail, hiniwa'},
+      {amount:'1/2 tasa',item:'peanut butter'},
+      {amount:'1/4 tasa',item:'ground toasted rice'},
+      {amount:'1 piraso',item:'sibuyas'},
+      {amount:'4 butil',item:'bawang'},
+      {amount:'1 piraso',item:'puso ng saging'},
+      {amount:'2 piraso',item:'talong, hiniwa'},
+      {amount:'1 tali',item:'sitaw'},
+      {amount:'',item:'Bagoong alamang, para sa pagsisilbi'},
+    ],
+    steps:[
+      'Pakuluan ang oxtail ng 2 oras hanggang malambot. Itabi ang sabaw.',
+      'Igisa ang bawang at sibuyas. Dagdag ang oxtail at sabaw.',
+      'Ihalo ang peanut butter. Lagyan ng ground toasted rice para lumapot.',
+      'Dagdag ang atswete (annatto water) para sa kulay. Lutuin ng 15 minuto.',
+      'Ilagay ang mga gulay, lutuin hanggang luto.',
+      'Ihain kasama ang bagoong sa gilid. Masarap!'
+    ]
+  },
+  {
+    id:7, name:'Inihaw na Tilapia', cat:'seafood', catLabel:'🦐 Seafood', emoji:'🐟',
+    bg:'linear-gradient(135deg,#EFF6FF,#DBEAFE)',
+    time:'25 min', cost:'₱80–120', costNum:100, servings:'2 pax',
+    tags:['healthy','budget','quick','lowcarb'], nutrition:['Healthy','Low Carb','Budget-Friendly'],
+    trending:false, rating:4.5,
+    desc:'Masarap at murang ulam! Tilapia na puno ng kamatis at sibuyas, inihaw sa uling hanggang charred at mabango.',
+    ingredients:[
+      {amount:'2 piraso',item:'tilapia, nalinis'},
+      {amount:'3 piraso',item:'kamatis, hiniwa'},
+      {amount:'1 piraso',item:'sibuyas, hiniwa'},
+      {amount:'4 butil',item:'bawang, tinadtad'},
+      {amount:'',item:'Asin at paminta'},
+      {amount:'2 kutsara',item:'toyo'},
+      {amount:'',item:'Kalamansi, para sa sawsawan'},
+    ],
+    steps:[
+      'Lagyan ng hiwa ang tilapia sa magkabilang gilid.',
+      'Timplahan ng asin, paminta, at toyo sa loob at labas.',
+      'Punan ang tiyan ng kamatis, sibuyas, at bawang.',
+      'Ilagay sa uling o grill pan.',
+      'Lutuin ng 8–10 minuto sa bawat gilid hanggang luto.',
+      'Ihain kasama ang kalamansi at sawsawan. Kain na!'
+    ]
+  },
+  {
+    id:8, name:'Chicken Inasal', cat:'asian', catLabel:'🍜 Asian', emoji:'🍖',
+    bg:'linear-gradient(135deg,#FFF7ED,#FFEDD5)',
+    time:'2 oras (may marinade)', cost:'₱150–220', costNum:185, servings:'4 pax',
+    tags:['highprotein','budget'], nutrition:['High Protein','Budget-Friendly'],
+    trending:true, rating:4.9,
+    desc:'Sikat na grilled chicken mula Bacolod! Maasim, mabango, at napakasarap kasama ang garlic rice at sawsawan.',
+    ingredients:[
+      {amount:'1 kg',item:'manok, hiniwa'},
+      {amount:'1/4 tasa',item:'kalamansi juice'},
+      {amount:'3 kutsara',item:'suka'},
+      {amount:'3 butil',item:'bawang, tinadtad'},
+      {amount:'2 tangkay',item:'tanglad (lemongrass), dinurog'},
+      {amount:'1 kutsarita',item:'luyang dilaw (turmeric)'},
+      {amount:'2 kutsara',item:'atsueteng mantika'},
+      {amount:'',item:'Asin at paminta'},
+    ],
+    steps:[
+      'Ihalo ang lahat ng marinade ingredients. Ibabad ang manok ng 1 oras.',
+      'Initin ang grill sa medium-high heat.',
+      'I-grill ang manok ng 20–25 minuto, laging basting ng butter at atsuete.',
+      'Luto na kapag malinaw na ang sabaw at charred na ang balat.',
+      'Ihain kasama ang sinangag at sawsawan na suka at sibuyas.'
+    ]
+  },
+  {
+    id:9, name:'Pancit Canton', cat:'chinese', catLabel:'🥡 Chinese', emoji:'🍜',
+    bg:'linear-gradient(135deg,#FFF1F2,#FFE4E6)',
+    time:'20 min', cost:'₱80–130', costNum:105, servings:'4 pax',
+    tags:['budget','quick'], nutrition:['Budget-Friendly'],
+    trending:false, rating:4.6,
+    desc:'Masustansyang pansit na luto sa toyo, gulay, at karne. Perpekto sa handaan o pang-araw-araw na ulam!',
+    ingredients:[
+      {amount:'250g',item:'canton noodles'},
+      {amount:'200g',item:'baboy o manok, hiniwa'},
+      {amount:'2 kutsara',item:'toyo'},
+      {amount:'1 piraso',item:'sibuyas'},
+      {amount:'4 butil',item:'bawang'},
+      {amount:'1 tasa',item:'repolyo, hiniwa'},
+      {amount:'1 tasa',item:'carrots, julienned'},
+      {amount:'',item:'Kalamansi at toyo, sawsawan'},
+    ],
+    steps:[
+      'Igisa ang bawang at sibuyas. Ilagay ang karne, lutuin hanggang luto.',
+      'Dagdag ang gulay, igisa ng mabilis.',
+      'Ihalo ang toyo at kaunting tubig.',
+      'Ilagay ang canton noodles. Haluin hanggang ma-absorb ang sabaw.',
+      'Timplahan ng asin at paminta. Ihain agad kasama ang kalamansi!'
+    ]
+  },
+  {
+    id:10, name:'Burger Steak', cat:'western', catLabel:'🍝 Western', emoji:'🍔',
+    bg:'linear-gradient(135deg,#F5F3FF,#EDE9FE)',
+    time:'25 min', cost:'₱120–180', costNum:150, servings:'3–4 pax',
+    tags:['budget','quick','highprotein'], nutrition:['High Protein','Budget-Friendly'],
+    trending:false, rating:4.5,
+    desc:'Sikat na Filipino-style burger steak na may mushroom gravy! Ang paboritong lutong-bahay na Filipino interpretation ng Western food.',
+    ingredients:[
+      {amount:'500g',item:'ground beef'},
+      {amount:'1/4 tasa',item:'bread crumbs'},
+      {amount:'1 piraso',item:'itlog'},
+      {amount:'',item:'Asin, paminta, garlic powder'},
+      {amount:'1 lata',item:'mushroom soup (cream)'},
+      {amount:'1 lata',item:'mushrooms, hiniwa'},
+      {amount:'1 tasa',item:'tubig'},
+      {amount:'2 kutsara',item:'toyo'},
+    ],
+    steps:[
+      'Haluin ang ground beef, bread crumbs, itlog, at seasoning. Gawing patties.',
+      'Iprito ang patties ng 4–5 minuto sa bawat gilid. Itabi.',
+      'Sa iisang kawali, igisa ang mushrooms.',
+      'Dagdag ang mushroom soup, tubig, at toyo. Pakuluin.',
+      'Ilagay ang patties sa gravy, lutuin ng 5 minuto pa.',
+      'Ihain kasama ang kanin at atsara. Enjoy!'
+    ]
+  },
+];
+
+const TIPID_TIPS = [
+  {icon:'🛒', title:'Bumili sa Palengke, Hindi sa Mall', text:'Mas mura ang mga gulay at isda sa wet market kumpara sa grocery stores. Makatitipid ka ng 30–50% sa ingredients!'},
+  {icon:'🥩', title:'Gamitin ang Mas Murang Cuts', text:'Pork belly o chicken thighs ay mas mura kaysa tenderloin pero mas masarap pa nga! Ginagawa nito ang adobo at sinigang na mas mayaman ang lasa.'},
+  {icon:'🧊', title:'Mag-bulk Cook Tuwing Weekend', text:'Luto ng marami sa Sabado, ilagay sa freezer para hindi na kailangang magluto araw-araw. Makatitipid ng oras at gas!'},
+  {icon:'🌿', title:'Tanim ng Sariling Herbs', text:'Dahon ng sili, kamatis, at sibuyas ay madaling itanim sa paso. Libre na ang mga ito para sa iyong mga lutuin!'},
+];
+
+const HEALTHY_SWAPS = [
+  {from:'Puting Bigas', to:'Red Rice o Quinoa'},
+  {from:'Puting Asin', to:'Patis (Fish Sauce) — mas matbaw ang lasa!'},
+  {from:'Regular na Mantika', to:'Coconut Oil o Olive Oil'},
+  {from:'Asukal', to:'Honey o Coconut Sugar'},
+  {from:'Pork Belly', to:'Skinless Chicken Breast'},
+  {from:'Full-fat Cream', to:'Low-fat Coconut Milk'},
+];
+
+const DAYS = ['Lunes','Martes','Miyerkules','Huwebes','Biyernes','Sabado','Linggo'];
+const DAY_EMOJIS = ['😪','☕','💪','🌤️','🎉','🎊','😴'];
+const MEALS = ['Almusal','Tanghalian','Merienda','Hapunan'];
+const CATEGORIES = [
+  {id:'all',     label:'Lahat',        emoji:'🍽️', bg:'linear-gradient(135deg,#FFF7ED,#FFEDD5)'},
+  {id:'filipino',label:'Filipino Faves',emoji:'🇵🇭', bg:'linear-gradient(135deg,#FFF1F2,#FFE4E6)'},
+  {id:'asian',   label:'Asian Food',   emoji:'🍜', bg:'linear-gradient(135deg,#FEF3C7,#FDE68A)'},
+  {id:'western', label:'Western',      emoji:'🍔', bg:'linear-gradient(135deg,#F5F3FF,#EDE9FE)'},
+  {id:'chinese', label:'Chinese Food', emoji:'🥡', bg:'linear-gradient(135deg,#FFF1F2,#FFE4E6)'},
+  {id:'healthy', label:'Healthy',      emoji:'🥗', bg:'linear-gradient(135deg,#F0FDF4,#DCFCE7)'},
+  {id:'budget',  label:'Budget Meals', emoji:'💸', bg:'linear-gradient(135deg,#FFFBEB,#FEF9C3)'},
+  {id:'quick',   label:'Quick Recipes',emoji:'⚡', bg:'linear-gradient(135deg,#EFF6FF,#DBEAFE)'},
+];
+
+/* ============================================================
+   STATE
+============================================================ */
+let favorites = JSON.parse(localStorage.getItem('ulam_favs') || '[]');
+let planner = JSON.parse(localStorage.getItem('ulam_plan') || '{}');
+let todayIdx = 0;
+let currentRecipe = null;
+let randomRecipe = null;
+let activeTag = 'all';
+
+/* ============================================================
+   INIT
+============================================================ */
+
+function setTodayDate() {
+  const d = new Date();
+  const opts = {weekday:'long', year:'numeric', month:'long', day:'numeric'};
+  document.getElementById('today-date').textContent = d.toLocaleDateString('fil-PH', opts);
+}
+
+/* ============================================================
+   TODAY CARD
+============================================================ */
+function renderTodayCard() {
+  const r = RECIPES[todayIdx];
+  const todayImgEl = document.getElementById('today-img-area');
+  if(todayImgEl) todayImgEl.style.background = r.bg;
+  document.getElementById('today-emoji').textContent = r.emoji;
+  document.getElementById('today-cat-badge').textContent = r.catLabel;
+  document.getElementById('today-name').textContent = r.name;
+  document.getElementById('today-time').textContent = r.time;
+  document.getElementById('today-cost').textContent = r.cost;
+  document.getElementById('today-servings').textContent = r.servings;
+  const badges = document.getElementById('today-badges');
+  badges.innerHTML = r.nutrition.map(n => `<span class="badge badge-${getBadgeColor(n)}">${n}</span>`).join('');
+  document.getElementById('today-view-btn').onclick = () => showRecipe(r);
+  document.getElementById('today-save-btn').onclick = () => toggleFav(r);
+  document.getElementById('today-plan-btn').onclick = () => showPlanModal(r);
+  const saveBtn = document.getElementById('today-save-btn');
+  if(favorites.includes(r.id)) saveBtn.innerHTML = '❤️ Saved';
+  else saveBtn.innerHTML = '🤍 I-save';
+}
+
+function newSuggestion() {
+  todayIdx = (todayIdx + 1) % RECIPES.length;
+  renderTodayCard();
+  toast('Bagong ulam idea! 🍽️');
+}
+
+function getBadgeColor(tag) {
+  const map = {'High Protein':'blue','Healthy':'green','Budget-Friendly':'yellow','Low Carb':'red','Quick':'blue'};
+  return map[tag] || 'orange';
+}
+
+/* ============================================================
+   CATEGORIES
+============================================================ */
+function renderCategories() {
+  const grid = document.getElementById('cat-grid');
+  grid.innerHTML = CATEGORIES.map(c => `
+    <div class="cat-item" onclick="selectCategory('${c.id}')">
+      <div class="cat-img" style="background:${c.bg||'var(--warm-gray)'}">
+        <span style="font-size:2rem">${c.emoji}</span>
+      </div>
+      <div class="cat-label">${c.label}</div>
+    </div>`).join('');
+}
+
+function selectCategory(id) {
+  document.querySelectorAll('.cat-item').forEach((el,i)=>{
+    el.classList.toggle('active', CATEGORIES[i].id === id);
+  });
+  showView('search');
+  const q = id === 'all' ? '' : id;
+  document.getElementById('search-input').value = '';
+  renderSearchResults(CATEGORIES.find(c=>c.id===id)?.label === 'Lahat' ? RECIPES : RECIPES.filter(r=>r.cat===id || r.tags.includes(id)));
+}
+
+/* ============================================================
+   TRENDING
+============================================================ */
+function renderTrending() {
+  const trending = RECIPES.filter(r=>r.trending);
+  document.getElementById('trending-list').innerHTML = trending.map((r,i)=>`
+    <div class="trending-item" onclick="showRecipe(RECIPES.find(x=>x.id===${r.id}))">
+      <div class="trending-num${i<3?' top':''}">${i+1}</div>
+      <div class="trending-img" style="background:${r.bg||'var(--warm-gray)'}">
+        <span style="font-size:1.8rem">${r.emoji}</span>
+      </div>
+      <div class="trending-info">
+        <div class="trending-name">${r.name}</div>
+        <div class="trending-sub">${r.cost} • ${r.time}</div>
+      </div>
+      <div class="trending-fire">${i===0?'🔥🔥':i<3?'🔥':'⭐'}</div>
+    </div>`).join('');
+}
+
+/* ============================================================
+   HORIZONTAL SCROLL
+============================================================ */
+function renderHScroll(containerId, recipes) {
+  document.getElementById(containerId).innerHTML = recipes.map(r=>`
+    <div class="rcard-sm" onclick="showRecipe(RECIPES.find(x=>x.id===${r.id}))">
+      <div class="rcard-sm-img" style="background:${r.bg||'var(--warm-gray)'}">
+        <span>${r.emoji}</span>
+      </div>
+      <div class="rcard-sm-body">
+        <div class="rcard-sm-name">${r.name}</div>
+        <div class="rcard-sm-meta">
+          <span>⏱ ${r.time}</span>
+          <span class="rcard-sm-price">${r.cost}</span>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+/* ============================================================
+   TIPID TIPS
+============================================================ */
+function renderTipidTips() {
+  document.getElementById('tipid-list').innerHTML = TIPID_TIPS.map(t=>`
+    <div class="tip-card">
+      <div class="tip-header">
+        <span class="tip-icon">${t.icon}</span>
+        <span class="tip-title">${t.title}</span>
+      </div>
+      <div class="tip-text">${t.text}</div>
+    </div>`).join('');
+}
+
+/* ============================================================
+   HEALTHY SWAPS
+============================================================ */
+function renderHealthySwaps() {
+  document.getElementById('swaps-list').innerHTML = HEALTHY_SWAPS.map(s=>`
+    <div class="swap-card">
+      <div class="swap-from">❌ ${s.from}</div>
+      <div class="swap-arrow">→</div>
+      <div class="swap-to">✅ ${s.to}</div>
+    </div>`).join('');
+}
+
+/* ============================================================
+   RECIPE DETAIL
+============================================================ */
+function showRecipe(r) {
+  currentRecipe = r;
+  const isSaved = favorites.includes(r.id);
+  const el = document.getElementById('recipe-detail-content');
+  el.innerHTML = `
+    <div class="recipe-detail-hero" style="background:${r.bg||'linear-gradient(135deg,#FFF7ED,#FFEDD5)'}">
+      <div class="recipe-detail-hero-emoji">${r.emoji}</div>
+      <div class="recipe-detail-overlay"></div>
+      <button class="recipe-back-btn" onclick="showView('home')">←</button>
+      <div class="recipe-detail-actions">
+        <button class="recipe-action-btn ${isSaved?'saved':''}" id="detail-save-btn" onclick="toggleFavDetail(${r.id})" title="Save">${isSaved?'❤️':'🤍'}</button>
+        <button class="recipe-action-btn" onclick="showPlanModal(currentRecipe)" title="Add to plan">📅</button>
+      </div>
+      <div class="recipe-detail-title">
+        <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:6px">
+          ${r.nutrition.map(n=>`<span class="badge badge-${getBadgeColor(n)}">${n}</span>`).join('')}
+        </div>
+        <h1>${r.name}</h1>
+      </div>
+    </div>
+    <div class="recipe-detail-body">
+      <div class="recipe-stats-row">
+        <div class="recipe-stat"><div class="recipe-stat-val">${r.time}</div><div class="recipe-stat-label">Oras ng Pagluluto</div></div>
+        <div class="recipe-stat"><div class="recipe-stat-val">${r.costNum}+</div><div class="recipe-stat-label">Gastos (₱)</div></div>
+        <div class="recipe-stat"><div class="recipe-stat-val">${r.servings.split(' ')[0]}</div><div class="recipe-stat-label">Servings</div></div>
+      </div>
+      <p style="font-size:.88rem;color:var(--text-2);font-weight:600;line-height:1.6;margin-bottom:20px">${r.desc}</p>
+      <div class="recipe-section-title">🛒 Mga Sangkap (Ingredients)</div>
+      <ul class="ing-list">
+        ${r.ingredients.map(ing=>`
+          <li class="ing-item">
+            <span class="ing-dot"></span>
+            <span class="ing-amount">${ing.amount}</span>
+            <span>${ing.item}</span>
+          </li>`).join('')}
+      </ul>
+      <div class="recipe-section-title">👨‍🍳 Paano Lutuin (Steps)</div>
+      ${r.steps.map((s,i)=>`
+        <div class="step-item">
+          <div class="step-num">${i+1}</div>
+          <div class="step-text">${s}</div>
+        </div>`).join('')}
+      <div class="add-to-plan-bar">
+        <button class="btn btn-primary" style="flex:1;justify-content:center" onclick="showPlanModal(currentRecipe)">📅 Idagdag sa Plan</button>
+        <button class="btn btn-secondary" style="flex:1;justify-content:center" onclick="toggleFavDetail(${r.id})" id="detail-save-bar-btn">${isSaved?'❤️ Saved':'🤍 I-save'}</button>
+      </div>
+    </div>`;
+  showView('recipe');
+  window.scrollTo(0,0);
+}
+
+function toggleFavDetail(id) {
+  const idx = favorites.indexOf(id);
+  if(idx === -1) { favorites.push(id); toast('Na-save sa Favorites! ❤️'); }
+  else { favorites.splice(idx,1); toast('Naalis sa Favorites.'); }
+  localStorage.setItem('ulam_favs', JSON.stringify(favorites));
+  updateFavBadge();
+  const btn = document.getElementById('detail-save-btn');
+  const barBtn = document.getElementById('detail-save-bar-btn');
+  if(btn) { btn.textContent = favorites.includes(id)?'❤️':'🤍'; btn.classList.toggle('saved', favorites.includes(id)); }
+  if(barBtn) barBtn.textContent = favorites.includes(id)?'❤️ Saved':'🤍 I-save';
+}
+
+/* ============================================================
+   FAVORITES
+============================================================ */
+function renderFavorites() {
+  const list = document.getElementById('favorites-list');
+  const faved = RECIPES.filter(r=>favorites.includes(r.id));
+  document.getElementById('stat-saved').textContent = faved.length;
+  if(!faved.length) {
+    list.innerHTML=`<div class="empty-state"><div class="empty-state-icon">🤍</div><div class="empty-state-title">Wala pang saved recipes</div><div class="empty-state-sub">I-tap ang 🤍 sa anumang recipe para i-save ito dito. Libre lang!</div></div>`;
+    return;
+  }
+  list.innerHTML = faved.map(r=>`
+    <div class="rcard-list" onclick="showRecipe(RECIPES.find(x=>x.id===${r.id}))">
+      <div class="rcard-list-img" style="background:${r.bg||'var(--warm-gray)'}"><span>${r.emoji}</span></div>
+      <div class="rcard-list-body">
+        <div class="rcard-list-name">${r.name}</div>
+        <div class="rcard-list-meta"><span>⏱ ${r.time}</span><span>💰 ${r.cost}</span></div>
+        <div class="rcard-list-tags">${r.nutrition.map(n=>`<span class="tag tag-${n.toLowerCase().replace(/ /g,'').replace('-','')}">${n}</span>`).join('')}</div>
+      </div>
+      <button class="rcard-list-save saved" onclick="event.stopPropagation();toggleFav(RECIPES.find(x=>x.id===${r.id}))" title="Remove from saved">❤️</button>
+    </div>`).join('');
+}
+
+function toggleFav(r) {
+  const idx = favorites.indexOf(r.id);
+  if(idx===-1){favorites.push(r.id);toast('Na-save! ❤️');}
+  else{favorites.splice(idx,1);toast('Naalis sa saved.');}
+  localStorage.setItem('ulam_favs', JSON.stringify(favorites));
+  updateFavBadge();
+  renderTodayCard();
+  renderFavorites();
+}
+
+function updateFavBadge() {
+  const badge = document.getElementById('fav-count');
+  if(favorites.length>0){badge.textContent=favorites.length;badge.style.display='flex';}
+  else badge.style.display='none';
+}
+
+/* ============================================================
+   SEARCH
+============================================================ */
+function renderSearchChips() {
+  document.getElementById('search-chips').innerHTML = [
+    {label:'Lahat',id:'all'},
+    {label:'💸 Budget',id:'budget'},
+    {label:'🥗 Healthy',id:'healthy'},
+    {label:'⚡ Quick',id:'quick'},
+    {label:'🇵🇭 Filipino',id:'filipino'},
+    {label:'🍜 Asian',id:'asian'},
+    {label:'🥡 Chinese',id:'chinese'},
+    {label:'🍝 Western',id:'western'},
+  ].map(c=>`<div class="chip${activeTag===c.id?' active':''}" onclick="setSearchTag('${c.id}',this)">${c.label}</div>`).join('');
+}
+
+function setSearchTag(tag, el) {
+  activeTag = tag;
+  document.querySelectorAll('#search-chips .chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  doSearch(document.getElementById('search-input')?.value || '');
+}
+
+function doSearch(q) {
+  if(document.getElementById('search-input')) document.getElementById('search-input').value = q;
+  showView('search');
+  let results = RECIPES;
+  if(activeTag !== 'all') results = results.filter(r=>r.cat===activeTag||r.tags.includes(activeTag));
+  if(q.trim()) results = results.filter(r=>r.name.toLowerCase().includes(q.toLowerCase())||r.desc.toLowerCase().includes(q.toLowerCase()));
+  renderSearchResults(results);
+}
+
+function liveSearch(q) {
+  if(q.length > 0) doSearch(q);
+}
+
+function filterTag(tag, el) {
+  activeTag = tag;
+  document.querySelectorAll('.filters-scroll .chip').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  let results = RECIPES;
+  if(tag!=='all') results = results.filter(r=>r.tags.includes(tag));
+  showView('search');
+  renderSearchResults(results);
+  renderSearchChips();
+}
+
+function filterAndShowAll(tag) {
+  activeTag = tag;
+  showView('search');
+  renderSearchChips();
+  renderSearchResults(RECIPES.filter(r=>r.tags.includes(tag)));
+}
+
+function renderSearchResults(recipes) {
+  const el = document.getElementById('search-results');
+  if(!recipes.length){
+    el.innerHTML=`<div class="empty-state"><div class="empty-state-icon">🔍</div><div class="empty-state-title">Walang nahanap</div><div class="empty-state-sub">Try another keyword o category</div></div>`;
+    return;
+  }
+  el.innerHTML = `<div style="font-size:.8rem;font-weight:700;color:var(--text-3);margin-bottom:10px">${recipes.length} recipe${recipes.length!==1?'s':''} na nahanap</div>`
+    + recipes.map(r=>`
+    <div class="rcard-list" onclick="showRecipe(RECIPES.find(x=>x.id===${r.id}))">
+      <div class="rcard-list-img" style="background:${r.bg||'var(--warm-gray)'}"><span>${r.emoji}</span></div>
+      <div class="rcard-list-body">
+        <div class="rcard-list-name">${r.name}</div>
+        <div class="rcard-list-meta"><span>⏱ ${r.time}</span><span>💰 ${r.cost}</span><span>👥 ${r.servings}</span></div>
+        <div class="rcard-list-tags">${r.nutrition.map(n=>`<span class="tag tag-${getTagClass(n)}">${n}</span>`).join('')}</div>
+      </div>
+      <button class="rcard-list-save ${favorites.includes(r.id)?'saved':''}" onclick="event.stopPropagation();toggleFav(RECIPES.find(x=>x.id===${r.id}))">${favorites.includes(r.id)?'❤️':'🤍'}</button>
+    </div>`).join('');
+}
+
+function getTagClass(n){
+  const m={'High Protein':'protein','Healthy':'healthy','Budget-Friendly':'budget','Low Carb':'lowcarb','Quick':'quick'};
+  return m[n]||'budget';
+}
+
+/* ============================================================
+   WEEKLY PLANNER
+============================================================ */
+function renderPlanner() {
+  let total = 0;
+  Object.values(planner).forEach(d=>Object.values(d).forEach(v=>{if(v)total++;}));
+  document.getElementById('stat-planned').textContent = total;
+  document.getElementById('planner-days').innerHTML = DAYS.map((day,di)=>`
+    <div class="planner-day" id="day-${di}">
+      <div class="planner-day-header" onclick="toggleDay(${di})">
+        <div class="planner-day-name"><span class="day-emoji">${DAY_EMOJIS[di]}</span>${day}</div>
+        <div class="planner-day-status" id="day-status-${di}">${getDayStatus(di)}</div>
+      </div>
+      <div class="planner-day-body">${MEALS.map((meal,mi)=>`
+        <div class="planner-meal-slot">
+          <div class="planner-meal-label">${meal}</div>
+          <div class="planner-meal-value ${planner[di]&&planner[di][mi]?'':'empty'}" id="slot-${di}-${mi}">
+            ${planner[di]&&planner[di][mi]?planner[di][mi]:'Wala pa…'}
+          </div>
+          <button class="planner-add-btn" onclick="openMealPicker(${di},${mi})">${planner[di]&&planner[di][mi]?'✏️':'+'}</button>
+        </div>`).join('')}
+      </div>
+    </div>`).join('');
+}
+
+function getDayStatus(di) {
+  const d = planner[di] || {};
+  const filled = Object.values(d).filter(Boolean).length;
+  if(!filled) return 'Walang plano';
+  return `${filled}/${MEALS.length} meals`;
+}
+
+function toggleDay(di) {
+  document.getElementById('day-'+di).classList.toggle('open');
+}
+
+function openMealPicker(dayIdx, mealIdx) {
+  document.getElementById('plan-meal-name').textContent = `${DAYS[dayIdx]} — ${MEALS[mealIdx]}`;
+  document.getElementById('plan-options').innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      ${RECIPES.map(r=>`
+        <div onclick="assignMeal(${dayIdx},${mealIdx},'${r.name}')" style="background:var(--warm-gray);border-radius:var(--r-sm);padding:10px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .2s;font-size:.82rem;font-weight:700" onmouseover="this.style.background='var(--orange-pale)'" onmouseout="this.style.background='var(--warm-gray)'">
+          <div style="width:36px;height:36px;border-radius:6px;flex-shrink:0;background:${r.bg||'var(--orange-pale)'};display:flex;align-items:center;justify-content:center;font-size:1.3rem">${r.emoji}</div>
+          ${r.name}
+        </div>`).join('')}
+    </div>
+    ${planner[dayIdx]&&planner[dayIdx][mealIdx]?`<button class="btn btn-ghost btn-sm" style="width:100%;margin-top:10px;justify-content:center;color:var(--red);border-color:var(--red)" onclick="clearMeal(${dayIdx},${mealIdx})">🗑 Alisin</button>`:''}`;
+  openModal('plan-modal');
+}
+
+function assignMeal(di, mi, name) {
+  if(!planner[di]) planner[di]={};
+  planner[di][mi] = name;
+  localStorage.setItem('ulam_plan', JSON.stringify(planner));
+  closeModal('plan-modal');
+  renderPlanner();
+  toast(`${name} ay naidagdag sa ${DAYS[di]} ${MEALS[mi]}! 📅`);
+}
+
+function clearMeal(di, mi) {
+  if(planner[di]) delete planner[di][mi];
+  localStorage.setItem('ulam_plan', JSON.stringify(planner));
+  closeModal('plan-modal');
+  renderPlanner();
+  toast('Meal ay naalis. 🗑');
+}
+
+function generateGrocery() {
+  const meals = [];
+  Object.values(planner).forEach(d=>Object.values(d).forEach(v=>{if(v)meals.push(v);}));
+  if(!meals.length){toast('Walang meals sa planner! Mag-dagdag muna. 📅');return;}
+  const planned = RECIPES.filter(r=>meals.includes(r.name));
+  const allIng = {};
+  planned.forEach(r=>r.ingredients.forEach(ing=>{
+    const key = ing.item.toLowerCase().replace(/,.*$/,'').trim();
+    if(!allIng[key]) allIng[key]={item:ing.item, amounts:[]};
+    if(ing.amount) allIng[key].amounts.push(ing.amount);
+  }));
+  const groceries = Object.values(allIng);
+  document.getElementById('grocery-output').innerHTML = `
+    <div class="grocery-section">
+      <div class="grocery-title">🛒 Grocery List <span style="font-size:.8rem;font-weight:600;color:var(--text-2)">(${groceries.length} items)</span></div>
+      ${groceries.map((g,i)=>`
+        <div class="grocery-item" id="groc-${i}">
+          <div class="grocery-check" id="groc-check-${i}" onclick="checkGrocery(${i})"></div>
+          <span id="groc-text-${i}">${g.amounts.join('+')||''} ${g.item}</span>
+        </div>`).join('')}
+      <button class="btn btn-ghost btn-sm" style="width:100%;margin-top:12px;justify-content:center" onclick="document.getElementById('grocery-output').innerHTML=''">✕ Isara ang Grocery List</button>
+    </div>`;
+  document.getElementById('grocery-output').scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function checkGrocery(i) {
+  const check = document.getElementById('groc-check-'+i);
+  const text = document.getElementById('groc-text-'+i);
+  check.classList.toggle('checked');
+  text.style.textDecoration = check.classList.contains('checked')?'line-through':'none';
+  text.style.opacity = check.classList.contains('checked')?'0.5':'1';
+}
+
+/* ============================================================
+   PLAN MODAL (from today card)
+============================================================ */
+function showPlanModal(r) {
+  document.getElementById('plan-meal-name').textContent = `Idagdag: ${r.name}`;
+  document.getElementById('plan-options').innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+      ${DAYS.map((d,di)=>MEALS.map((m,mi)=>`
+        <div onclick="assignMeal(${di},${mi},'${r.name}')" style="background:var(--warm-gray);border-radius:var(--r-sm);padding:10px;cursor:pointer;text-align:center;font-size:.8rem;font-weight:700;transition:background .2s" onmouseover="this.style.background='var(--orange-pale)'" onmouseout="this.style.background='var(--warm-gray)'">
+          ${d}<br><span style="color:var(--text-3);font-weight:600">${m}</span>
+        </div>`).join('')).join('')}
+    </div>`;
+  openModal('plan-modal');
+}
+
+/* ============================================================
+   RANDOM GENERATOR
+============================================================ */
+function initRandom() {
+  const r = RECIPES[Math.floor(Math.random()*RECIPES.length)];
+  randomRecipe = r;
+  const imgEl = document.getElementById('rand-img');
+  imgEl.textContent = r.emoji;
+  imgEl.style.background = r.bg || 'var(--orange-pale)';
+  document.getElementById('rand-name').textContent = r.name;
+  document.getElementById('rand-meta').textContent = `${r.cost} • ${r.time}`;
+  document.getElementById('rand-view-btn').onclick = ()=>{closeModal('random-modal');showRecipe(r);};
+}
+
+function spinRandom() {
+  const btn = document.getElementById('spin-btn');
+  btn.classList.add('spinning');
+  let count = 0;
+  const interval = setInterval(()=>{
+    const r = RECIPES[Math.floor(Math.random()*RECIPES.length)];
+    const imgEl = document.getElementById('rand-img');
+    imgEl.textContent = r.emoji;
+    imgEl.style.background = r.bg || 'var(--orange-pale)';
+    document.getElementById('rand-name').textContent = r.name;
+    document.getElementById('rand-meta').textContent = `${r.cost} • ${r.time}`;
+    randomRecipe = r;
+    count++;
+    if(count>=12){
+      clearInterval(interval);
+      btn.classList.remove('spinning');
+      document.getElementById('rand-view-btn').onclick=()=>{closeModal('random-modal');showRecipe(randomRecipe);};
+      toast(`Ang ulam mo ngayon: ${randomRecipe.name}! 🎲`);
+    }
+  }, 80);
+}
+
+/* ============================================================
+   MODAL UTILS
+============================================================ */
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow='';
+}
+function showRandomModal() {
+  openModal('random-modal');
+  initRandom();
+}
+
+/* ============================================================
+   TOAST
+============================================================ */
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2400);
+}
+
+/* ============================================================
+   SUBMIT
+============================================================ */
+function submitRecipe() {
+  toast('Salamat! Ire-review namin ang iyong recipe! 🙏');
+  setTimeout(()=>showView('home'),1500);
+}
+
+/* ============================================================
+   REF KO — AI INGREDIENT FEATURE
+============================================================ */
+let refIngredients = [];
+const QUICK_INGS = ['Manok','Baboy','Isda','Itlog','Kamatis','Sibuyas','Bawang','Talong','Kangkong','Pechay','Carrots','Patatas'];
+
+function initRefKo() {
+  document.getElementById('quick-ings').innerHTML = QUICK_INGS.map(i =>
+    `<button class="quick-ing-btn" onclick="quickAddIng('${i}')">${i}</button>`
+  ).join('');
+}
+
+function quickAddIng(name) {
+  if (!refIngredients.includes(name)) {
+    refIngredients.push(name);
+    renderRefTags();
+  }
+}
+
+function addRefIng() {
+  const input = document.getElementById('ref-ing-input');
+  const val = input.value.trim();
+  if (!val) return;
+  val.split(',').map(v => v.trim()).filter(Boolean).forEach(v => {
+    const cap = v.charAt(0).toUpperCase() + v.slice(1);
+    if (!refIngredients.includes(cap)) refIngredients.push(cap);
+  });
+  input.value = '';
+  renderRefTags();
+}
+
+function removeRefIng(i) {
+  refIngredients.splice(i, 1);
+  renderRefTags();
+}
+
+function renderRefTags() {
+  const area = document.getElementById('ref-tags-area');
+  const btn = document.getElementById('btn-suggest-ai');
+  if (!refIngredients.length) {
+    area.innerHTML = '<span class="ref-empty-msg">Wala pang ingredients. Mag-dagdag ka na!</span>';
+    btn.disabled = true;
+    return;
+  }
+  area.innerHTML = refIngredients.map((ing, i) =>
+    `<span class="ref-ing-tag" onclick="removeRefIng(${i})">${ing} <span class="ref-ing-tag-x">✕</span></span>`
+  ).join('');
+  btn.disabled = false;
+}
+
+async function suggestFromRef() {
+  const output = document.getElementById('ref-ai-output');
+  output.innerHTML = `<div class="ai-loading"><div class="ai-loading-spinner"></div>Hinahanap ang pinaka-angkop na ulam…</div>`;
+  const prompt = `You are a Filipino cooking assistant. Given these available ingredients: ${refIngredients.join(', ')}, suggest 4 possible Filipino dishes or meals that can be made. For each dish return: name (Filipino dish name), emoji (1 relevant food emoji), reason (short 1 sentence in Filipino/Taglish explaining which ingredients match), tags (array of relevant tags from: budget, healthy, quick, highprotein). Return ONLY valid JSON array, no markdown, no extra text. Example format: [{"name":"Adobong Manok","emoji":"🍗","reason":"Pwede gamitin ang manok at bawang para sa klasikong adobo.","tags":["budget","highprotein"]}]`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        messages: [{role: 'user', content: prompt}]
+      })
+    });
+    const data = await res.json();
+    const text = data.content.map(b => b.text || '').join('');
+    const clean = text.replace(/```json|```/g, '').trim();
+    const suggestions = JSON.parse(clean);
+    renderRefResults(suggestions);
+  } catch(e) {
+    const fallback = [
+      {name:'Adobong Manok', emoji:'🍗', reason:'Classic Filipino dish na luto sa toyo at suka.', tags:['budget','highprotein']},
+      {name:'Ginisang Gulay', emoji:'🥦', reason:'Masustansyang ginisa na gulay na angkop sa iyong mga ingredients.', tags:['healthy','quick']},
+      {name:'Sinigang na Manok', emoji:'🍲', reason:'Masarap na sabaw gamit ang iyong mga ingredients.', tags:['healthy']},
+      {name:'Tortang Itlog', emoji:'🍳', reason:'Simple at mabilis na almusal o meryenda.', tags:['budget','quick']},
+    ];
+    renderRefResults(fallback);
+  }
+}
+
+function renderRefResults(suggestions) {
+  const output = document.getElementById('ref-ai-output');
+  const tagColors = {budget:'tag-budget', healthy:'tag-healthy', quick:'tag-quick', highprotein:'tag-protein'};
+  output.innerHTML = `
+    <div class="ai-result-card">
+      <div class="ai-result-header">
+        <div class="ai-result-title">🤖 Mga maaari mong lutuin:</div>
+      </div>
+      ${suggestions.map(s => {
+        const matched = RECIPES.find(r => r.name.toLowerCase().includes(s.name.toLowerCase().split(' ')[0]));
+        return `
+        <div class="ai-result-item" onclick="${matched ? `showRecipe(RECIPES.find(x=>x.id===${matched.id}))` : `toast('Recipe coming soon para sa ${s.name}! 🍽️')`}">
+          <div class="ai-result-emoji">${s.emoji}</div>
+          <div class="ai-result-info">
+            <div class="ai-result-name">${s.name}</div>
+            <div class="ai-result-why">${s.reason}</div>
+            <div style="display:flex;gap:5px;margin-top:5px;flex-wrap:wrap">
+              ${(s.tags||[]).map(t => `<span class="tag ${tagColors[t]||'tag-budget'}">${t}</span>`).join('')}
+            </div>
+          </div>
+          <div class="ai-result-arrow">›</div>
+        </div>`
+      }).join('')}
+    </div>`;
+}
+
+/* ============================================================
+   CALENDAR
+============================================================ */
+let calDate = new Date(2026, 3, 1); // April 2026
+let calMeals = JSON.parse(localStorage.getItem('ulam_cal') || '{}');
+let selectedCalDay = null;
+const CAL_MEAL_TYPES = ['Almusal','Tanghalian','Hapunan'];
+const MONTH_NAMES_FIL = ['Enero','Pebrero','Marso','Abril','Mayo','Hunyo','Hulyo','Agosto','Setyembre','Oktubre','Nobyembre','Disyembre'];
+
+function calKey(y, m, d) { return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
+
+function initCalendar() {
+  if (!Object.keys(calMeals).length) {
+    // Seed with sample data
+    const now = new Date(2026, 3, 6);
+    calMeals[calKey(2026,3,4)] = [{type:'Tanghalian', meal:'Adobong Manok', tag:'budget'}];
+    calMeals[calKey(2026,3,3)] = [{type:'Hapunan', meal:'Sinigang na Baboy', tag:'healthy'}];
+    calMeals[calKey(2026,3,5)] = [{type:'Tanghalian', meal:'Adobong Manok', tag:'budget'}];
+    calMeals[calKey(2026,3,2)] = [{type:'Hapunan', meal:'Chicken Inasal', tag:'special'}];
+    calMeals[calKey(2026,3,1)] = [{type:'Tanghalian', meal:'Pancit Canton', tag:'budget'}];
+    localStorage.setItem('ulam_cal', JSON.stringify(calMeals));
+  }
+  renderCalendar();
+}
+
+function renderCalendar() {
+  const y = calDate.getFullYear(), m = calDate.getMonth();
+  document.getElementById('cal-month-label').textContent = `${MONTH_NAMES_FIL[m]} ${y}`;
+  const firstDay = new Date(y, m, 1).getDay(); // 0=Sun
+  const adjusted = (firstDay === 0 ? 6 : firstDay - 1); // Mon first
+  const daysInMonth = new Date(y, m+1, 0).getDate();
+  const today = new Date();
+  let html = ['Lun','Mar','Miy','Huw','Biy','Sab','Lin'].map(d =>
+    `<div class="cal-day-label">${d}</div>`).join('');
+  for (let i = 0; i < adjusted; i++) html += `<button class="cal-day empty"></button>`;
+  for (let d = 1; d <= daysInMonth; d++) {
+    const key = calKey(y, m, d);
+    const meals = calMeals[key] || [];
+    const isToday = today.getFullYear()===y && today.getMonth()===m && today.getDate()===d;
+    const isSelected = selectedCalDay === key;
+    const dotColors = {healthy:'dot-green', budget:'dot-yellow', special:'dot-red', default:'dot-orange'};
+    const dots = meals.slice(0,3).map(me => `<span class="meal-dot ${dotColors[me.tag]||dotColors.default}"></span>`).join('');
+    html += `<button class="cal-day ${meals.length?'has-meal':''} ${isToday?'today':''} ${isSelected?'selected':''}"
+      onclick="selectCalDay('${key}',${d})"
+      style="${isSelected&&!isToday?'outline:2px solid var(--orange);outline-offset:2px':''}">
+      ${d}${dots?`<div class="meal-dot-row">${dots}</div>`:''}
+    </button>`;
+  }
+  document.getElementById('cal-grid').innerHTML = html;
+  renderCalRepeatAlert();
+  if (selectedCalDay) renderCalDetail(selectedCalDay);
+}
+
+function selectCalDay(key, d) {
+  selectedCalDay = key;
+  renderCalendar();
+  renderCalDetail(key);
+}
+
+function renderCalDetail(key) {
+  const meals = calMeals[key] || [];
+  const parts = key.split('-');
+  const dateLabel = `${parseInt(parts[2])} ${MONTH_NAMES_FIL[parseInt(parts[1])-1]} ${parts[0]}`;
+  const tagColors = {healthy:'dot-green', budget:'dot-yellow', special:'dot-red', default:'dot-orange'};
+  let html = `<div class="cal-detail-panel fade-up"><div class="cal-detail-date">${dateLabel}</div>`;
+  if (!meals.length) html += `<div style="font-size:.84rem;color:var(--text-3);font-weight:600;font-style:italic;padding:8px 0">Walang nakatalaang ulam sa araw na ito.</div>`;
+  else meals.forEach(me => {
+    html += `<div class="cal-meal-entry">
+      <div class="cal-meal-type">${me.type}</div>
+      <div class="cal-meal-name">${me.meal}</div>
+      <span class="cal-meal-tag" style="background:${me.tag==='healthy'?'var(--green)':me.tag==='budget'?'var(--yellow)':me.tag==='special'?'var(--red)':'var(--orange)'}"></span>
+    </div>`;
+  });
+  html += `<div style="display:flex;gap:8px;margin-top:10px">`;
+  CAL_MEAL_TYPES.forEach(t => {
+    const hasType = meals.find(m => m.type === t);
+    if (!hasType) html += `<button class="btn btn-ghost btn-sm" onclick="openCalMealPicker('${key}','${t}')">+ ${t}</button>`;
+  });
+  html += `</div></div>`;
+  document.getElementById('cal-detail-panel').innerHTML = html;
+}
+
+function renderCalRepeatAlert() {
+  const keys = Object.keys(calMeals).sort().reverse();
+  const recent = {};
+  keys.forEach(k => {
+    (calMeals[k]||[]).forEach(m => {
+      if (!recent[m.meal]) recent[m.meal] = [];
+      recent[m.meal].push(k);
+    });
+  });
+  const repeated = Object.entries(recent).find(([name, dates]) => dates.length >= 2);
+  const el = document.getElementById('cal-repeat-alert');
+  if (repeated) {
+    const [name, dates] = repeated;
+    const alts = RECIPES.filter(r => r.name !== name && r.tags.includes('healthy')).slice(0,3);
+    el.innerHTML = `<div class="repeat-alert-box fade-up">
+      <span style="font-size:1.2rem">⚠️</span>
+      <div>
+        <div class="repeat-alert-text">Niluto mo na ang <strong>${name}</strong> ${dates.length}x kamakailan! Subukan ng iba naman.</div>
+        <div class="repeat-alt-row">
+          ${alts.map(r => `<span class="alt-chip" onclick="showRecipe(RECIPES.find(x=>x.id===${r.id}));showView('recipe')">${r.name}</span>`).join('')}
+        </div>
+      </div>
+    </div>`;
+  } else el.innerHTML = '';
+}
+
+function openCalMealPicker(key, mealType) {
+  document.getElementById('cal-modal-title').textContent = `Mag-dagdag: ${mealType}`;
+  document.getElementById('cal-modal-options').innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+      ${RECIPES.map(r => `
+        <div onclick="addCalMeal('${key}','${mealType}','${r.name}',getTagForRecipe(${r.id}))"
+          style="background:var(--warm-gray);border-radius:var(--r-sm);padding:10px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:background .2s;font-size:.8rem;font-weight:700"
+          onmouseover="this.style.background='var(--orange-pale)'" onmouseout="this.style.background='var(--warm-gray)'">
+          <div style="width:34px;height:34px;border-radius:6px;flex-shrink:0;background:${r.bg||'var(--orange-pale)'};display:flex;align-items:center;justify-content:center;font-size:1.3rem">${r.emoji}</div>
+          ${r.name}
+        </div>`).join('')}
+    </div>`;
+  openModal('cal-modal');
+}
+
+function getTagForRecipe(id) {
+  const r = RECIPES.find(x => x.id === id);
+  if (!r) return 'default';
+  if (r.tags.includes('healthy')) return 'healthy';
+  if (r.tags.includes('budget')) return 'budget';
+  return 'default';
+}
+
+function addCalMeal(key, mealType, mealName, tag) {
+  if (!calMeals[key]) calMeals[key] = [];
+  calMeals[key] = calMeals[key].filter(m => m.type !== mealType);
+  calMeals[key].push({type: mealType, meal: mealName, tag});
+  localStorage.setItem('ulam_cal', JSON.stringify(calMeals));
+  closeModal('cal-modal');
+  selectedCalDay = key;
+  renderCalendar();
+  toast(`${mealName} ay naidagdag! 📅`);
+}
+
+function calPrevMonth() {
+  calDate = new Date(calDate.getFullYear(), calDate.getMonth() - 1, 1);
+  selectedCalDay = null;
+  document.getElementById('cal-detail-panel').innerHTML = '';
+  renderCalendar();
+}
+
+function calNextMonth() {
+  calDate = new Date(calDate.getFullYear(), calDate.getMonth() + 1, 1);
+  selectedCalDay = null;
+  document.getElementById('cal-detail-panel').innerHTML = '';
+  renderCalendar();
+}
+
+/* ============================================================
+   BUDGET PLANNER
+============================================================ */
+let selectedOccasion = 'daily';
+
+function selectOccasion(btn) {
+  document.querySelectorAll('.occasion-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedOccasion = btn.dataset.occ;
+  runBudgetCalc();
+}
+
+function runBudgetCalc() {
+  const budget = parseFloat(document.getElementById('budget-amount').value) || 0;
+  const servings = parseInt(document.getElementById('budget-servings').value) || 1;
+  const el = document.getElementById('budget-results');
+  if (budget < 50) { el.innerHTML = ''; return; }
+  const multiplier = {daily:1, family:1.2, celebration:1.5, mealprep:0.85}[selectedOccasion] || 1;
+  const adjBudget = budget * multiplier;
+  const matching = RECIPES.filter(r => r.costNum <= adjBudget).sort((a,b) => a.costNum - b.costNum);
+  if (!matching.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-state-icon">😅</div><div class="empty-state-title">Masyado mang maliit ang budget</div><div class="empty-state-sub">Subukan ng ₱150 pataas para sa mas maraming pagpipilian.</div></div>`;
+    return;
+  }
+  const SWAPS = [
+    {from:'Pork Belly', to:'Chicken Thighs', saving:'₱50–80/kg'},
+    {from:'Shrimp', to:'Tilapia', saving:'₱100–150/kg'},
+    {from:'Tenderloin', to:'Ground Beef', saving:'₱80–120/kg'},
+    {from:'Imported Cheese', to:'Eden Cheese', saving:'₱60–100'},
+  ];
+  el.innerHTML = `
+    <div class="budget-results-card fade-up">
+      <div class="budget-results-header">
+        <div class="budget-results-title">✅ ${matching.length} Ulam na Kasya sa ₱${budget.toFixed(0)}</div>
+        <div class="budget-results-sub">${servings} tao · ${selectedOccasion === 'celebration' ? 'Mas maraming karne!' : selectedOccasion === 'mealprep' ? 'Bulk cooking mode!' : 'Pang-araw-araw'}</div>
+      </div>
+      ${matching.slice(0,6).map(r => `
+        <div class="budget-rec-item" onclick="showRecipe(RECIPES.find(x=>x.id===${r.id}))">
+          <div class="budget-rec-img" style="background:${r.bg||'var(--orange-pale)'}"><span style="font-size:1.8rem">${r.emoji}</span></div>
+          <div class="budget-rec-info">
+            <div class="budget-rec-name">${r.name}</div>
+            <div class="budget-rec-meta">⏱ ${r.time} · ${r.servings}</div>
+          </div>
+          <div class="budget-rec-cost">
+            <div class="budget-rec-price">${r.cost}</div>
+            <div class="budget-rec-per">~₱${Math.round(r.costNum/servings)}/tao</div>
+          </div>
+        </div>`).join('')}
+    </div>
+    <div class="budget-stretch-card fade-up">
+      <div class="budget-stretch-title">💡 Stretch ang Budget Mo!</div>
+      ${SWAPS.slice(0,3).map(s => `
+        <div class="budget-swap-row">
+          <span class="budget-swap-from">${s.from}</span>
+          <span class="budget-swap-arrow">→</span>
+          <span class="budget-swap-to">${s.to}</span>
+          <span style="font-size:.72rem;color:var(--green);font-weight:800;margin-left:4px">save ${s.saving}</span>
+        </div>`).join('')}
+    </div>`;
+}
+
+/* ============================================================
+   SHARING ULAM
+============================================================ */
+const SHARING_DATA = [
+  {id:1, name:'Kare-Kare',       emoji:'🥜', bg:'linear-gradient(135deg,#FEF3C7,#FDE68A)', servings:4, dist:0.4, free:true,  price:0,   pickup:'Hanggang 6pm',       type:'ulam',    poster:{name:'Maria A.',   initials:'MA', rating:4.9, reviews:32}},
+  {id:2, name:'Leche Flan',      emoji:'🍮', bg:'linear-gradient(135deg,#FEF9C3,#FDE68A)', servings:8, dist:0.7, free:false, price:120,  pickup:'Bukas hanggang 12pm', type:'dessert', poster:{name:'Rosa C.',    initials:'RC', rating:5.0, reviews:18}},
+  {id:3, name:'Nilaga',          emoji:'🍲', bg:'linear-gradient(135deg,#F0FDF4,#DCFCE7)', servings:3, dist:0.8, free:false, price:50,   pickup:'Hanggang 8pm',       type:'ulam',    poster:{name:'Juan D.',    initials:'JD', rating:4.6, reviews:11}},
+  {id:4, name:'Bibingka',        emoji:'🎋', bg:'linear-gradient(135deg,#FFF7ED,#FFEDD5)', servings:6, dist:1.1, free:true,  price:0,   pickup:'Hanggang 5pm',       type:'kakanin', poster:{name:'Lola Nene',  initials:'LN', rating:4.8, reviews:55}},
+  {id:5, name:'Pancit Palabok',  emoji:'🍝', bg:'linear-gradient(135deg,#FFF1F2,#FFE4E6)', servings:5, dist:1.5, free:false, price:80,   pickup:'Hanggang 7pm',       type:'ulam',    poster:{name:'Tita Mercy', initials:'TM', rating:4.7, reviews:24}},
+  {id:6, name:'Palitaw',         emoji:'🍡', bg:'linear-gradient(135deg,#EFF6FF,#DBEAFE)', servings:10,dist:1.9, free:true,  price:0,   pickup:'Bukas ng umaga',     type:'kakanin', poster:{name:'Ben R.',     initials:'BR', rating:4.5, reviews:8}},
+];
+let sharingFilter = 'all';
+
+function initSharing() { renderSharingListings(); }
+
+function setSharingFilter(filter, el) {
+  sharingFilter = filter;
+  document.querySelectorAll('.share-filter-row .chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  renderSharingListings();
+}
+
+function renderSharingListings() {
+  let data = SHARING_DATA;
+  if (sharingFilter === 'free') data = data.filter(d => d.free);
+  else if (sharingFilter === '1km') data = data.filter(d => d.dist <= 1);
+  else if (sharingFilter !== 'all') data = data.filter(d => d.type === sharingFilter);
+  const el = document.getElementById('sharing-listings');
+  if (!data.length) { el.innerHTML = `<div class="empty-state"><div class="empty-state-icon">🍽️</div><div class="empty-state-title">Wala pang available</div><div class="empty-state-sub">Walang listing sa filter na ito ngayon.</div></div>`; return; }
+  el.innerHTML = data.map(d => `
+    <div class="sharing-listing-card">
+      <div class="sharing-listing-img" style="background:${d.bg||'var(--orange-pale)'}">
+        <span>${d.emoji}</span>
+        <div class="sharing-listing-overlay"></div>
+        <div class="sharing-listing-price-badge">
+          <span class="badge ${d.free?'badge-green':'badge-orange'}">${d.free?'🆓 LIBRE':'₱'+d.price}</span>
+        </div>
+        <div class="sharing-listing-dist">📍 ${d.dist}km</div>
+      </div>
+      <div class="sharing-listing-body">
+        <div class="sharing-listing-name">${d.name} <span style="font-size:.78rem;color:var(--text-3);font-weight:600">(${d.servings} servings)</span></div>
+        <div class="sharing-listing-meta">
+          <span>🕐 ${d.pickup}</span>
+          <span>📦 ${d.servings} servings</span>
+        </div>
+        <div class="sharing-listing-poster">
+          <div class="sharing-poster-avatar">${d.poster.initials}</div>
+          <div class="sharing-poster-info">
+            <div class="sharing-poster-name">${d.poster.name}</div>
+            <div class="sharing-poster-rating">${'★'.repeat(Math.floor(d.poster.rating))}${'☆'.repeat(5-Math.floor(d.poster.rating))} ${d.poster.rating} (${d.poster.reviews} reviews)</div>
+          </div>
+        </div>
+        <div class="sharing-actions">
+          <button class="btn-chat" onclick="toast('Chat feature coming soon! 💬')">💬 Chat</button>
+          <button class="btn-claim" onclick="claimSharing('${d.name}')">✋ ${d.free?'Kumuha':'Bilhin'}</button>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function claimSharing(name) {
+  toast(`Hinihingi mo ang ${name}… ✅ Ine-notify si poster!`);
+}
+
+function showPostSharingModal() { openModal('post-sharing-modal'); }
+
+let postPriceMode = 'free';
+function setPostPrice(mode) {
+  postPriceMode = mode;
+  document.getElementById('post-free-btn').className = `btn btn-${mode==='free'?'green':'ghost'} btn-sm`;
+  document.getElementById('post-paid-btn').className = `btn btn-${mode==='paid'?'primary':'ghost'} btn-sm`;
+}
+
+function submitSharingPost() {
+  const name = document.getElementById('post-dish-name').value.trim();
+  if (!name) { toast('Ilagay ang pangalan ng ulam! 🍽️'); return; }
+  closeModal('post-sharing-modal');
+  toast(`"${name}" ay na-post na! Nakita na ng mga kapitbahay mo 🎉`);
+}
+
+/* ============================================================
+   UPDATED INIT
+============================================================ */
+function init() {
+  setTodayDate();
+  renderTodayCard();
+  renderCategories();
+  renderTrending();
+  renderHScroll('budget-scroll', RECIPES.filter(r => r.tags.includes('budget')));
+  renderHScroll('healthy-scroll', RECIPES.filter(r => r.tags.includes('healthy')));
+  renderTipidTips();
+  renderHealthySwaps();
+  renderPlanner();
+  renderSearchChips();
+  updateFavBadge();
+  initRandom();
+  initRefKo();
+  initCalendar();
+  initSharing();
+}
+
+/* ============================================================
+   SHOW VIEW (single authoritative version)
+============================================================ */
+function showView(id) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  const target = document.getElementById('view-' + id);
+  if (!target) return;
+  target.classList.add('active');
+  document.querySelectorAll('.bnav-item').forEach(b => {
+    b.classList.toggle('active', b.dataset.view === id);
+  });
+  window.scrollTo(0, 0);
+  if (id === 'favorites') renderFavorites();
+  if (id === 'search') { renderSearchChips(); renderSearchResults(RECIPES); setTimeout(() => document.getElementById('search-input')?.focus(), 100); }
+  if (id === 'calendar') renderCalendar();
+  if (id === 'budget') runBudgetCalc();
+  if (id === 'sharing') renderSharingListings();
+}
+
+/* ============================================================
+   START
+============================================================ */
+init();
+
+</script>
+</body>
+</html>
